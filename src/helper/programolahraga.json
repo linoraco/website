@@ -1,0 +1,42 @@
+[
+  {
+    "id": 19,
+    "uuid": "addaa4c6-3966-4b1c-9f24-fd724ed19dff",
+    "nama_pembuat_program_olahraga": "Lino",
+    "kontak_admin_program_olahraga": "90809798798",
+    "nama_program_olahraga": "Senam pagi bersama jajaran pemerintahan kabupaten minasaha selatan",
+    "gambar_program_olahraga": "images/foto1.jpeg"
+  },
+  {
+    "id": 20,
+    "uuid": "e676040a-702a-4c52-ad79-26dc78d3d26f",
+    "nama_pembuat_program_olahraga": "John",
+    "kontak_admin_program_olahraga": "09182391897",
+    "nama_program_olahraga": "Gerakan kreatifitas untuk daya saing altlet-altlet minahasa selatan",
+    "gambar_program_olahraga": "images/foto5.jpeg"
+  },
+  {
+    "id": 21,
+    "uuid": "adc95b02-2b06-4fd7-be1f-342fd3bec70b",
+    "nama_pembuat_program_olahraga": "Juan Sumampouw",
+    "kontak_admin_program_olahraga": "089831923",
+    "nama_program_olahraga": "Program Atlet Esport ",
+    "gambar_program_olahraga": "images/foto6.jpeg"
+  },
+  {
+    "id": 22,
+    "uuid": "e9b408a1-3605-433b-ad2b-9cc201f67f61",
+    "nama_pembuat_program_olahraga": "Juan Jong",
+    "kontak_admin_program_olahraga": "082313123",
+    "nama_program_olahraga": "Program Atlet Minsel Bebas KKN",
+    "gambar_program_olahraga": "images/foto2.jpeg"
+  },
+  {
+    "id": 23,
+    "uuid": "aa3ab4a7-8c84-4709-bfa6-f0441f5b2b9b",
+    "nama_pembuat_program_olahraga": "John Sumampoouw",
+    "kontak_admin_program_olahraga": "082348135155",
+    "nama_program_olahraga": "Program Minsel Bangkit",
+    "gambar_program_olahraga": "images/foto7.jpeg"
+  }
+]

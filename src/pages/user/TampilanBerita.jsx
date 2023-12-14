@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Beritapemuda from "../../helper/beritapemuda.json";
 
 const TampilanBerita = () => {
   const [data, setData] = useState([]);
@@ -47,10 +48,7 @@ const TampilanBerita = () => {
       <br />
       {/* <!-- Content --> */}
       <div className="flex justify-center items-center">
-        <h1 className="text-4xl text-center">
-          {" "}
-          {beritas && beritas.judul_berita}
-        </h1>
+        <h1 className="text-4xl text-center"> {Beritapemuda.judul_berita}</h1>
       </div>
       ;
       <br />
@@ -60,26 +58,23 @@ const TampilanBerita = () => {
         <br />
         <div className="flex mx-20">
           <p className="text-[#888888] px-3">
-            by {beritas && beritas.nama_pembuat_berita}{" "}
+            by {Beritapemuda.nama_pembuat_berita}{" "}
           </p>
-          <p className="text-[#888888] px-3">
-            {" "}
-            {beritas && beritas.tanggal_berita}
-          </p>
+          <p className="text-[#888888] px-3"> {Beritapemuda.tanggal_berita}</p>
         </div>
         <br />
         <br />
 
         <img
           className="w-[1000px] rounded-xl mx-56"
-          src={beritas && beritas.URL}
+          src={Beritapemuda.gambar}
           alt=""
         />
 
         <br />
         <br />
         <div className="mx-56">
-          <p className="text-justify">{beritas && beritas.isi_berita}</p>
+          <p className="text-justify">{Beritapemuda.isi_berita}</p>
         </div>
       </div>
       {/* <!-- content end --> */}

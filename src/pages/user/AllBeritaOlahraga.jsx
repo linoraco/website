@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
+import Beritaolahraga from "../../helper/beritaolahraga.json";
 
 const AllBeritaOlahraga = () => {
   const [data, setData] = useState([]);
@@ -30,13 +31,17 @@ const AllBeritaOlahraga = () => {
         <br />
         {/* <!-- Content --> */}
         <div className="grid grid-cols-3 place-items-center my-10">
-          {data.map((item) => (
+          {Beritaolahraga.map((item) => (
             <Link
               to={`/tampilan-berita-olahraga/${item.id}`}
               className="card w-96 h-[520px] bg-base-100 shadow-xl my-4"
             >
               <figure>
-                <img className="" src={item.URL} alt="Shoes" />
+                <img
+                  className=""
+                  src={item.gambar_berita_olahraga}
+                  alt="Shoes"
+                />
               </figure>
               <div className="card-body">
                 <h2 className="card-title flex flex-col">

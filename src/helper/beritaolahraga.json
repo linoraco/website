@@ -1,0 +1,65 @@
+[
+  {
+    "id": 8,
+    "uuid": "84ca64f1-cbac-449d-af83-1108f8b86ca1",
+    "nama_pembuat_berita_olahraga": "John ",
+    "judul_berita_olahraga": "Kegiatansayangajndajsfnkbhajsf",
+    "isi_berita_olahraga": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita_olahraga": "20 desember 2024",
+    "gambar_berita_olahraga": "images/foto1.jpeg"
+  },
+  {
+    "id": 10,
+    "uuid": "602531f2-0fff-427b-b4fa-30211e7729d7",
+    "nama_pembuat_berita_olahraga": "Tian Karundeng",
+    "judul_berita_olahraga": "Lomba Lari karung tingkat Kabupaten Minahasa Selatan",
+    "isi_berita_olahraga": "kjsabdfkjsabdjfhbasjhdfbhjabsdfbjhjasbfkjasbhdfjhbasdhjfbajkhsdbfjasdbfhasdbfhas",
+    "tanggal_berita_olahraga": "11 April 2021",
+    "gambar_berita_olahraga": "images/foto6.jpeg"
+  },
+  {
+    "id": 15,
+    "uuid": "645e1111-244a-4105-9f7c-502e1448d0b9",
+    "nama_pembuat_berita_olahraga": "John Juana",
+    "judul_berita_olahraga": "Mankajdafdiewbfjkwnckjwecw cmkwnkjw",
+    "isi_berita_olahraga": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita_olahraga": "20 desember 2024",
+    "gambar_berita_olahraga": "images/foto7.jpeg"
+  },
+  {
+    "id": 16,
+    "uuid": "86b574ce-f991-43bb-987c-7ced86c7ed1c",
+    "nama_pembuat_berita_olahraga": "John Karundeng",
+    "judul_berita_olahraga": "Mankajdafdiewbfjkwnckjwecw cmkwnkjw",
+    "isi_berita_olahraga": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita_olahraga": "20 desember 2024",
+    "gambar_berita_olahraga": "images/foto2.jpeg"
+  },
+  {
+    "id": 17,
+    "uuid": "6aa1def6-b84c-4725-b5aa-5e9a7dcca88a",
+    "nama_pembuat_berita_olahraga": "Lino Jong",
+    "judul_berita_olahraga": "Mankajdafdiewbfjkwnckjwecw cmkwnkjw",
+    "isi_berita_olahraga": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita_olahraga": "20 desember 2024",
+    "gambar_berita_olahraga": "images/foto8.jpeg"
+  },
+  {
+    "id": 18,
+    "uuid": "915a7405-d951-4359-9e4f-d57a95e9ef1c",
+    "nama_pembuat_berita_olahraga": "Jesika Jong",
+    "judul_berita_olahraga": "Mankajdafdiewbfjkwnckjwecw cmkwnkjw",
+    "isi_berita_olahraga": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita_olahraga": "13 desember 2023",
+    "gambar_berita_olahraga": "images/foto5.jpeg"
+  },
+  {
+    "id": 19,
+    "uuid": "2ec4cde2-9dd1-4402-85be-2ee3ad1d7c5b",
+    "nama_pembuat_berita_olahraga": "Jesika Karundeng",
+    "judul_berita_olahraga": "Mankajdafdiewbfjkwnckjwecw cmkwnkjw",
+    "isi_berita_olahraga": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita_olahraga": "13 desember 2023",
+    "gambar_berita_olahraga": "images/foto6.jpeg"
+  }
+]

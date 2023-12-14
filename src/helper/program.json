@@ -1,0 +1,50 @@
+[
+  {
+    "id": 14,
+    "uuid": "114d9d93-757b-4ac5-9220-3349234637d4",
+    "nama_pembuat_program": "john",
+    "kontak_admin_program": "092309480912",
+    "nama_program": "skhdbvshbvjkhsd",
+    "gambar_program": "images/foto1.jpeg"
+  },
+  {
+    "id": 15,
+    "uuid": "36e26def-b004-46fe-95f0-2d426b44eb1e",
+    "nama_pembuat_program": "John Karundeng",
+    "kontak_admin_program": "0823133123",
+    "nama_program": "Program Beasiswa",
+    "gambar_program": "images/foto6.jpeg"
+  },
+  {
+    "id": 16,
+    "uuid": "0563857e-246e-4584-bbc0-c571b8b39ec4",
+    "nama_pembuat_program": "Juan Karundeng",
+    "kontak_admin_program": "0823133123",
+    "nama_program": "Program Kemahasiswaan",
+    "gambar_program": "images/foto3.jpeg"
+  },
+  {
+    "id": 17,
+    "uuid": "1155108b-a410-42e3-b618-c7038f51155d",
+    "nama_pembuat_program": "Jesika Karundeng",
+    "kontak_admin_program": "0823133123",
+    "nama_program": "Program Minsel Bangkit",
+    "gambar_program": "images/foto5.jpeg"
+  },
+  {
+    "id": 18,
+    "uuid": "e7d6f253-438a-4982-ad0e-ec8f5092ef06",
+    "nama_pembuat_program": "Jong Karundeng",
+    "kontak_admin_program": "0823133123",
+    "nama_program": "Program Minsel Kreatif",
+    "gambar_program": "images/foto6.jpeg"
+  },
+  {
+    "id": 19,
+    "uuid": "b6cdaa18-c5bf-42d7-98c5-30ef34631bbc",
+    "nama_pembuat_program": "Juan Jong",
+    "kontak_admin_program": "089831923",
+    "nama_program": "Program Atlet Minsel Bersih KKN ",
+    "gambar_program": "images/foto7.jpeg"
+  }
+]

@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
+import Program from "../../helper/program.json";
 
 const AllProgram = () => {
   const [data, setData] = useState([]);
@@ -29,13 +30,13 @@ const AllProgram = () => {
         <br />
         {/* <!-- Content --> */}
         <div className="grid grid-cols-3 place-items-center my-10">
-          {data.map((item) => (
+          {Program.map((item) => (
             <Link
               to={`/tampilan-program/${item.id}`}
               className="card w-96 h-[520px] bg-base-100 shadow-xl my-4"
             >
               <figure>
-                <img className="" src={item.URL} alt="Shoes" />
+                <img className="" src={item.gambar_program} alt="Shoes" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title flex flex-col">

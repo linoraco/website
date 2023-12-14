@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
+import Galeri from "../../helper/galeri.json";
 
 const AllGaleri = () => {
   const [galeri, setGaleri] = useState([]);
@@ -31,10 +32,10 @@ const AllGaleri = () => {
         <br />
         {/* <!-- Content --> */}
         <div className="grid grid-cols-3 place-items-center">
-          {galeri.map((galeri) => (
+          {Galeri.map((galeri) => (
             <div className="avatar my-4">
               <div className="w-96 rounded">
-                <img src={galeri.URL} />
+                <img src={galeri.gambar} />
               </div>
             </div>
           ))}

@@ -13,6 +13,15 @@ import VisiMisi from "./VisiMisi";
 import axios from "axios";
 import LogoPemkab from "../../assets/img/minsel_300x300.png";
 import FDWPYR from "../../assets/img/FDW-PYR-1.jpeg";
+import fotokadis from "../../assets/img/kadis.png";
+import bupati from "../../assets/img/bupati.png";
+
+// data dummy
+import Beritapemuda from "../../helper/beritapemuda.json";
+import Beritaolahraga from "../../helper/beritaolahraga.json";
+import galeri from "../../helper/galeri.json";
+import Program from "../../helper/program.json";
+import Programolahraga from "../../helper/programolahraga.json";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -197,21 +206,43 @@ const HomePage = () => {
       {/* <!-- navbar end --> */}
       {/* <!-- content --> */}
       <div className="bg-red-500 ">
-        <div className="flex justify-center py-11 ">
-          {/* <img
-            className="w-[450px] h-[250px] rounded-2xl ml-[-100px]"
-            src={FDWPYR}
-            alt=""
-          /> */}
-          <h1 className="xl:text-4xl  font-serif text-center">
+        <div className="flex justify-center py-11 ml-3">
+          <div>
+            <img
+              className="w-[500px] h-[300px] rounded-2xl ml-[-90px]"
+              src={bupati}
+              alt=""
+            />
+            <div className="flex items-center ml-[-35px] ">
+              <div className="mt-[-50px] bg-red-600 text-white text-center py-2 px-2 rounded-md">
+                <h1 className="text-[10px]">FRANGKY DONNY WONGKAR, SH.</h1>
+                <p className="text-[10px]">BUPATI MINAHASA SELATAN</p>
+              </div>
+              <div className="mt-[-50px]  bg-red-600 text-white text-center py-2 px-2 rounded-md">
+                <h1 className="text-[10px]">PDT. PETRA YANI REMBANG</h1>
+                <p className="text-[9px]">WAKIL BUPATI MINAHASA SELATAN</p>
+              </div>
+            </div>
+          </div>
+          <h1 className="xl:text-4xl mr-3 ml-[-100px] justify-center  font-serif text-center">
             DINAS PEMUDA DAN OLAHRAGA <br />{" "}
             <span className="flex mt-3">KABUPATEN MINAHASA SELATAN</span>
           </h1>
-          {/* <img
-            className="w-[450px] h-[250px] mr-[-100px]"
-            src={FDWPYR}
-            alt=""
-          /> */}
+          <div className="mt-[-10] ">
+            <img
+              className="w-[200px] h-[250px] rounded-2xl "
+              src={fotokadis}
+              alt=""
+            />
+            <div className="flex items-center  ">
+              <div className=" bg-red-600 text-white text-center py-2 px-2 rounded-md">
+                <h1 className="text-[10px]">
+                  DR.FIETBER SOLEMAN RACO, SPd.Msi
+                </h1>
+                <p className="text-[10px]">BUPATI MINAHASA SELATAN</p>
+              </div>
+            </div>
+          </div>
         </div>
         <div ref={section1} className=" font-semibold font-mono mr-11">
           <p className="text-end text-white">Rabu, 6 Desember 2023</p>
@@ -244,13 +275,13 @@ const HomePage = () => {
             modules={[FreeMode, Pagination]}
             className="max-w-[90%] lg:max-w-[80%]"
           >
-            {data.map((item) => (
+            {Beritapemuda.map((item) => (
               <SwiperSlide key={item.judul_berita}>
                 <Link to={"/all-berita"}>
                   <div className="flex flex-col gap-6 mb-20 group relative shadow-lg text-white rounded-xl px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer">
                     <div
                       className="absolute inset-0 bg-cover bg-center"
-                      style={{ backgroundImage: `url(${item.URL})` }}
+                      style={{ backgroundImage: `url(${item.gambar})` }}
                     />
                     <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50" />
                     <div className="relative flex flex-col gap-3">
@@ -281,7 +312,7 @@ const HomePage = () => {
           <Link to={"/all-galeri"} className="slide">
             <img
               className="rounded-2xl h-[500px] w-[800px] cover-center"
-              src={galeris && galeris[currentIndex]?.URL}
+              src={galeri[currentIndex]?.gambar}
               alt={`slide-${currentIndex}`}
             />
           </Link>
@@ -313,13 +344,13 @@ const HomePage = () => {
         <br />
         <hr className="mx-28 shadow-xl 2xl:hidden" />
         <div className="grid xl:grid-cols-3 place-items-center my-10">
-          {data.slice(0, 3).map((item) => (
+          {Beritapemuda.slice(0, 3).map((item) => (
             <Link
               to={`/tampilan-berita/${item.id}`}
               className="card  w-96 h-[520px] bg-base-100 shadow-xl my-4"
             >
               <figure>
-                <img className="" src={item.URL} alt="Shoes" />
+                <img className="" src={item.gambar} alt="Shoes" />
               </figure>
               <div className="card-body bg-white rounded-b-2xl">
                 <h2 className="card-title flex flex-col">
@@ -351,27 +382,31 @@ const HomePage = () => {
         <br />
         <hr className="mx-28 shadow-xl" />
         <div className="grid xl:grid-cols-3 place-items-center my-10">
-          {dataOlahraga &&
-            dataOlahraga.slice(0, 3).map((item) => (
-              <Link
-                to={`/tampilan-berita-olahraga/${item.id}`}
-                className="card w-96 h-[520px] bg-base-100 shadow-xl my-4"
-              >
-                <figure>
-                  <img className="" src={item.URL} alt="Shoes" />
-                </figure>
-                <div className="card-body bg-white rounded-b-2xl">
-                  <h2 className="card-title flex flex-col">
-                    {item.judul_berita_olahraga}
-                    <div className="badge badge-secondary">
-                      {item.tanggal_berita_olahraga}
-                    </div>
-                  </h2>
-                  <p>{item.isi_berita_olahraga.slice(0, 30)}....</p>
-                  <div className="card-actions justify-end"></div>
-                </div>
-              </Link>
-            ))}
+          {Beritaolahraga.slice(0, 3).map((beritas) => (
+            <Link
+              key={beritas && beritas?.id}
+              to={`/tampilan-berita-olahraga/${beritas.id}`}
+              className="card w-96 h-[520px] bg-base-100 shadow-xl my-4"
+            >
+              <figure>
+                <img
+                  className=""
+                  src={beritas && beritas.gambar_berita_olahraga}
+                  alt="Shoes"
+                />
+              </figure>
+              <div className="card-body bg-white rounded-b-2xl">
+                <h2 className="card-title flex flex-col">
+                  {beritas && beritas.judul_berita_olahraga}
+                  <div className="badge badge-secondary">
+                    {beritas && beritas.tanggal_berita_olahraga}
+                  </div>
+                </h2>
+                <p>{beritas && beritas.isi_berita_olahraga.slice(0, 30)}....</p>
+                <div className="card-actions justify-end"></div>
+              </div>
+            </Link>
+          ))}
         </div>
         <div className="flex justify-center items-center mr-10">
           <button className=" rounded-xl text-white border py-2 px-4">
@@ -396,21 +431,24 @@ const HomePage = () => {
             </h1>
           </div>
           <div className="flex-col justify-start h-80 w-[600px] mt-11 ml-12">
-            {program &&
-              program.slice(0, 3).map((programs) => (
-                <div className="card lg:card-side 2xl:w-lg bg-white mt-11 shadow-xl">
-                  <figure>
-                    <img src={programs.URL} alt="Album" />
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title">{programs.nama_program}</h2>
-                    <p>{programs.nama_pembuat_program}</p>
-                    <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Listen</button>
-                    </div>
+            {Program.slice(0, 3).map((programs) => (
+              <div className="card lg:card-side 2xl:w-lg bg-white mt-11 shadow-xl">
+                <figure>
+                  <img
+                    className="h-[300px]"
+                    src={programs.gambar_program}
+                    alt="Album"
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">{programs.nama_program}</h2>
+                  <p>{programs.nama_pembuat_program}</p>
+                  <div className="card-actions justify-end">
+                    <button className="btn btn-primary">Listen</button>
                   </div>
                 </div>
-              ))}
+              </div>
+            ))}
             <div className="flex justify-center items-center mt-12">
               <button className=" rounded-xl text-white border py-2 px-4">
                 <Link to={"/all-program"}>See More..</Link>
@@ -427,23 +465,26 @@ const HomePage = () => {
             </h1>
           </div>
           <div className="flex-col justify-start h-80 w-[600px] mt-11 ml-10">
-            {programOlahraga &&
-              programOlahraga.slice(0, 3).map((programs) => (
-                <div className="card lg:card-side 2xl:w-lg bg-white mt-11 shadow-xl">
-                  <figure>
-                    <img src={programs.URL} alt="Album" />
-                  </figure>
-                  <div className="card-body">
-                    <h2 className="card-title">
-                      {programs.nama_program_olahraga}
-                    </h2>
-                    <p>{programs.nama_pembuat_program_olahraga}</p>
-                    <div className="card-actions justify-end">
-                      <button className="btn btn-primary">Listen</button>
-                    </div>
+            {Programolahraga.slice(0, 3).map((programs) => (
+              <div className="card lg:card-side 2xl:w-lg bg-white mt-11 shadow-xl">
+                <figure>
+                  <img
+                    className="h-[300px]"
+                    src={programs.gambar_program_olahraga}
+                    alt="Album"
+                  />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">
+                    {programs.nama_program_olahraga}
+                  </h2>
+                  <p>{programs.nama_pembuat_program_olahraga}</p>
+                  <div className="card-actions justify-end">
+                    <button className="btn btn-primary">Listen</button>
                   </div>
                 </div>
-              ))}
+              </div>
+            ))}
             <div className="flex justify-center items-center mt-12">
               <button className=" rounded-xl text-white border py-2 px-4">
                 <Link to={"/all-program-olahraga"}>See More..</Link>
@@ -483,13 +524,13 @@ const HomePage = () => {
           modules={[FreeMode, Pagination]}
           className="max-w-[90%] lg:max-w-[80%]"
         >
-          {galeris.map((galeri) => (
+          {galeri.map((galeri) => (
             <SwiperSlide key={galeri.URL}>
               <div>
                 <div className="flex flex-col gap-6 mb-20 group relative shadow-lg text-white rounded-xl px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px] overflow-hidden cursor-pointer">
                   <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${galeri.URL})` }}
+                    style={{ backgroundImage: `url(${galeri.gambar})` }}
                   />
 
                   <RxArrowTopRight className="absolute bottom-5 left-5 w-[35px] h-[35px] text-white group-hover:text-blue-500 group-hover:rotate-45 duration-100" />

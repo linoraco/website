@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
+import Beritapemuda from "../../helper/beritapemuda.json";
 
 const AllBerita = () => {
   const [data, setData] = useState([]);
@@ -30,13 +31,13 @@ const AllBerita = () => {
         <br />
         {/* <!-- Content --> */}
         <div className="grid grid-cols-3 place-items-center my-10">
-          {data.map((item) => (
+          {Beritapemuda.map((item) => (
             <Link
               to={`/tampilan-berita/${item.id}`}
               className="card w-96 h-[520px] bg-base-100 shadow-xl my-4"
             >
               <figure>
-                <img className="" src={item.URL} alt="Shoes" />
+                <img className="" src={item.gambar} alt="Shoes" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title flex flex-col">

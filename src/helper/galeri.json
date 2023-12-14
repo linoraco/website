@@ -1,0 +1,47 @@
+[
+  {
+    "id": 3,
+    "uuid": "593357db-1af1-4b79-b6a5-f2f6beba0914",
+    "gambar": "images/foto1.jpeg"
+  },
+  {
+    "id": 9,
+    "uuid": "a3b0b6f4-e771-4c66-a10a-42cd28571919",
+    "gambar": "images/foto2.jpeg"
+  },
+  {
+    "id": 10,
+    "uuid": "560f1bcd-e57c-45b8-83e2-4cd66726a841",
+    "gambar": "images/foto3.jpeg"
+  },
+  {
+    "id": 11,
+    "uuid": "2882e06d-d0c0-40f2-b29d-7b9eec9d8068",
+    "gambar": "images/foto4.jpeg"
+  },
+  {
+    "id": 12,
+    "uuid": "b948aea7-6205-4994-b8af-0fa5eb2cb17b",
+    "gambar": "images/foto4.jpeg"
+  },
+  {
+    "id": 13,
+    "uuid": "9c84df85-4e87-48d7-a176-f3a600196fe4",
+    "gambar": "images/foto5.jpeg"
+  },
+  {
+    "id": 15,
+    "uuid": "5eae7d2d-9ba4-43e2-82d0-e360d6e40d95",
+    "gambar": "images/foto6.jpeg"
+  },
+  {
+    "id": 16,
+    "uuid": "5419eb50-88ae-48a9-a0f2-2573633a493f",
+    "gambar": "images/foto7.jpeg"
+  },
+  {
+    "id": 17,
+    "uuid": "d18ef865-b054-4c70-95f8-e8ca48433f7f",
+    "gambar": "images/foto8.jpeg"
+  }
+]

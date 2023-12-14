@@ -1,0 +1,83 @@
+[
+  {
+    "id": 4,
+    "uuid": "e3c9c10e-08a6-46a6-9a67-f5382adc2ff4",
+    "nama_pembuat_berita": "uria",
+    "judul_berita": "jalan sehat bersama bupati",
+    "isi_berita": "askjdfbnkjashdbfkjhsbdf",
+    "tanggal_berita": "1 maret 2003",
+    "gambar": "images/foto1.jpeg"
+  },
+  {
+    "id": 15,
+    "uuid": "de2bbeaa-7ca5-4108-b750-ed052d4038da",
+    "nama_pembuat_berita": "Juan Jong",
+    "judul_berita": " Mansjdknaskjdnakjsdnajfnajksfnajsfnaj",
+    "isi_berita": "jaisbnfkjbsdkhjfbasjhdbfksndfjkankjfnkjdcnkjdnckjsnclkjsndckajnkcndkvjnakjsdfnv",
+    "tanggal_berita": "23 oktober 2023",
+    "gambar": "images/foto5.jpeg"
+  },
+  {
+    "id": 16,
+    "uuid": "ccb1f72a-c081-41ba-aa77-b5a8da023bf9",
+    "nama_pembuat_berita": "Marchelino",
+    "judul_berita": "kjwnafkjbfjksbfkjsdjnkdd ksv",
+    "isi_berita": "adfkhabdsjhvbsjdhvbjdfv bjndf vfsd sdf ",
+    "tanggal_berita": "24 mei 2024",
+    "gambar": "images/foto3.jpeg"
+  },
+  {
+    "id": 17,
+    "uuid": "5c71ce2b-9757-4959-8070-83772c4904c8",
+    "nama_pembuat_berita": "Jesika Karundeng",
+    "judul_berita": "Mankajdafdiewbfjkwnckjwecw cmkwnkjw",
+    "isi_berita": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita": "13 desember 2023",
+    "gambar": "images/foto5.jpeg"
+  },
+  {
+    "id": 18,
+    "uuid": "04aa1f72-1e53-425a-ab24-3d1272f07c6a",
+    "nama_pembuat_berita": "John Karundeng",
+    "judul_berita": "Mankajdafdiewbfjkwnckjwecw cmkwnkjw",
+    "isi_berita": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita": "13 desember 2023",
+    "gambar": "images/foto6.jpeg"
+  },
+  {
+    "id": 19,
+    "uuid": "06a5a88f-941a-4b4d-ae40-8223e5dfcf6c",
+    "nama_pembuat_berita": "Juan Karundeng",
+    "judul_berita": "Mankajdafdiewbfjkwnckjwecw cmkwnkjw",
+    "isi_berita": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita": "13 desember 2023",
+    "gambar": "images/foto7.jpeg"
+  },
+  {
+    "id": 20,
+    "uuid": "1a286f79-6ee7-4d1f-bfa9-97dfc1dd709c",
+    "nama_pembuat_berita": "Juan Jong",
+    "judul_berita": "Mankajdafdiewbfjkwnckjwecw cmkwnkjw",
+    "isi_berita": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita": "13 desember 2023",
+    "gambar": "images/foto8.jpeg"
+  },
+  {
+    "id": 21,
+    "uuid": "3694355d-e631-4e9d-b519-de15e9b0525d",
+    "nama_pembuat_berita": "Juan Jong Sumampouw",
+    "judul_berita": "Mankajdafdiewbfjkwnckjwecw cmkwnkjw",
+    "isi_berita": "ashbdfjhasbfhjkasvbdfhjasd",
+    "tanggal_berita": "13 desember 2023",
+    "gambar": "images/foto5.jpeg"
+  },
+  {
+    "id": 22,
+    "uuid": "367ca253-9148-4c04-ade4-ae02c6ee9244",
+    "nama_pembuat_berita": "John Juan Delasal",
+    "judul_berita": "Temu Antar mahasiswa delasal",
+    "isi_berita": "akdjhfskjdhfksdghsjdngkjsb",
+    "tanggal_berita": "24 desember 2024",
+    "gambar": "images/foto7.jpeg"
+  }
+]
