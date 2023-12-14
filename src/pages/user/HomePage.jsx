@@ -205,41 +205,45 @@ const HomePage = () => {
 
       {/* <!-- navbar end --> */}
       {/* <!-- content --> */}
+      <h1 className="xl:text-4xl bg-red-500 pt-10  pl-20 justify-center  font-serif text-center">
+        DINAS PEMUDA DAN OLAHRAGA <br />
+        <span className="flex justify-center mt-3">
+          {" "}
+          KABUPATEN MINAHASA SELATAN
+        </span>
+      </h1>
       <div className="bg-red-500 ">
-        <div className="flex justify-center py-11 ml-3">
-          <div>
+        <div className="flex justify-between  py-11 ml-3">
+          <div className="ml-[100px]">
             <img
-              className="w-[500px] h-[300px] rounded-2xl ml-[-90px]"
+              className="w-[600px] h-[350px] rounded-2xl ml-[-90px]"
               src={bupati}
               alt=""
             />
-            <div className="flex items-center ml-[-35px] ">
-              <div className="mt-[-50px] bg-red-600 text-white text-center py-2 px-2 rounded-md">
-                <h1 className="text-[10px]">FRANGKY DONNY WONGKAR, SH.</h1>
+            <div className="flex items-center ml-[-70px] ">
+              <div className="mt-[-50px] bg-red-600 text-white font-bold text-center py-2 px-2 rounded-md">
+                <h1 className="text-[15px]">FRANGKY DONNY WONGKAR, SH.</h1>
                 <p className="text-[10px]">BUPATI MINAHASA SELATAN</p>
               </div>
-              <div className="mt-[-50px]  bg-red-600 text-white text-center py-2 px-2 rounded-md">
-                <h1 className="text-[10px]">PDT. PETRA YANI REMBANG</h1>
+              <div className="mt-[-50px]  bg-red-600 text-white font-bold text-center py-2 px-2 rounded-md">
+                <h1 className="text-[15px]">PDT. PETRA YANI REMBANG</h1>
                 <p className="text-[9px]">WAKIL BUPATI MINAHASA SELATAN</p>
               </div>
             </div>
           </div>
-          <h1 className="xl:text-4xl mr-3 ml-[-100px] justify-center  font-serif text-center">
-            DINAS PEMUDA DAN OLAHRAGA <br />{" "}
-            <span className="flex mt-3">KABUPATEN MINAHASA SELATAN</span>
-          </h1>
-          <div className="mt-[-10] ">
+
+          <div className="mt-[-10] mr-20">
             <img
-              className="w-[200px] h-[250px] rounded-2xl "
+              className="w-[250px] h-[300px] rounded-2xl "
               src={fotokadis}
               alt=""
             />
             <div className="flex items-center  ">
-              <div className=" bg-red-600 text-white text-center py-2 px-2 rounded-md">
-                <h1 className="text-[10px]">
+              <div className=" bg-red-600 text-white font-bold text-center py-2 px-2 rounded-md">
+                <h1 className="text-[15px]">
                   DR.FIETBER SOLEMAN RACO, SPd.Msi
                 </h1>
-                <p className="text-[10px]">BUPATI MINAHASA SELATAN</p>
+                <p className="text-[9px]">KAPALA DINAS PEMUDA DAN OLAHRAGA</p>
               </div>
             </div>
           </div>
