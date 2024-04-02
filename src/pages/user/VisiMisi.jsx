@@ -1,57 +1,82 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/ComponenRespon/Navbar";
 import Footer from "../../components/Footer";
+import Bgdispora from "../../assets/img/bgdisporanewjpg.jpg";
 
 const VisiMisi = () => {
   return (
-    <div className="flex-col w-[1440px] max-h-full">
+    <div className="flex-col">
       {/* <!-- navbar --> */}
       <Navbar />
       {/* <!-- navbar end --> */}
-      <br />
-      <br />
-      <br />
-      {/* <!-- content --> */}
-      <div className="flex justify-center items-center">
-        <h1 className="text-4xl text-center">Visi dan Misi</h1>
-      </div>
-      <br />
-      <br />
-      <hr className="mx-20" />
 
-      <br />
-      <br />
-      <br />
+      {/* <!-- content --> */}
+      <div
+        style={{ backgroundImage: `url(${Bgdispora})` }}
+        className="flex justify-center items-center bg-auto bg-center bg-fixed py-24 mb-3"
+      >
+        <h1 className="text-3xl max-md:text-xl text-white text-center font-bold">
+          Visi dan Misi
+        </h1>
+      </div>
+
+      <hr className="mx-20 mt-4" />
+
       {/* <!-- Visi misi --> */}
-      <div className="mx-20">
-        <div>
-          <h1 className="text-2xl text-justify font-semibold">Visi</h1>
-          <p className="text-2xl text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Vestibulum mattis ullamcorper velit sed ullamcorper. Cras semper
-            auctor neque vitae tempus quam. Magna etiam tempor orci eu. Sagittis
-            eu volutpat odio facilisis mauris sit amet. Eros in cursus turpis
-            massa tincidunt dui ut. Consequat ac felis donec et odio
-            pellentesque diam. Neque egestas congue quisque egestas diam in. Dui
-            ut ornare lectus sit amet est. Quis lectus nulla at volutpat diam ut
-            venenatis tellus in.
+      <div className="">
+        <div className="mx-[10%] md:mx-[15%] lg:mx-[20%] xl:mx-[25%]">
+          <h1 className="text-sm sm:text-lg  lg:text-2xl mt-1 w-auto text-justify font-semibold">
+            Visi
+          </h1>
+          <p className="text-xs sm:text-sm  md:text-md lg:text-lg mt-1 text-justify">
+            Visi Dinas Pemuda dan Olahraga Kabupaten Minahasa Selatan adalah:{" "}
+            <br />
+            <span className=" font-semibold">
+              {" "}
+              “Membudidayakan insan pemuda yang mandiri dan olahraga berprestasi
+              demi masyarakat Minahasa Selatan maju berkepribadian sehat dan
+              sejahtera”
+            </span>
           </p>
         </div>
         <br />
         <br />
-        <div>
-          <h1 className="text-2xl text-justify font-semibold">Misi</h1>
-          <p className="text-2xl text-justify">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            Vestibulum mattis ullamcorper velit sed ullamcorper. Cras semper
-            auctor neque vitae tempus quam. Magna etiam tempor orci eu. Sagittis
-            eu volutpat odio facilisis mauris sit amet. Eros in cursus turpis
-            massa tincidunt dui ut. Consequat ac felis donec et odio
-            pellentesque diam. Neque egestas congue quisque egestas diam in. Dui
-            ut ornare lectus sit amet est. Quis lectus nulla at volutpat diam ut
-            venenatis tellus in.
+        <div className="mx-[10%] md:mx-[15%] lg:mx-[20%] xl:mx-[25%]">
+          <h1 className="text-sm sm:text-lg  lg:text-2xl mt-1 text-justify font-semibold">
+            Misi
+          </h1>
+          <p className="text-xs sm:text-sm  md:text-md lg:text-lg mt-5 text-justify">
+            <ol className="list-disc">
+              <li className="mt-10px">
+                Meningkatkan Kualitas dan Kuantitas SDM Keolahragaan
+              </li>
+              <li className="mt-10px">
+                Meningkatkan Kualitas dan Kuantitas Sarana dan Prasarana
+                Olahraga
+              </li>
+              <li className="mt-10px">
+                Meningkatkan Partisipasi Masyarakat berolahraga rekreasi dan
+                layanan khusus
+              </li>
+              <li className="mt-10px">
+                Meningkatkan Prestasi Olahraga dan Penghargaan
+              </li>
+              <li className="mt-10px">
+                Meningkatkan Inovasi, kreatifitas dan wirausaha Pemuda
+              </li>
+              <li className="mt-10px">
+                Meningkatkan Indeks Parisipasi Pemuda melalui kepemimpinan,
+                kepelopran dan kesukarelawan pemuda terhadap pembangunan Di
+                desa/kelurahan serta kecamatan
+              </li>
+              <li className="mt-10px">
+                Menurunkan indeks Kenakalan Remaja dan Pemuda
+              </li>
+              <li className="mt-10px">
+                Meningkatkan Dukungan ​Manajemen​ Penatayalanan administrasi
+                Perkantoran.
+              </li>
+            </ol>
           </p>
         </div>
       </div>

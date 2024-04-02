@@ -1,16 +1,15 @@
 import React, { useState, useEffect, useRef } from "react";
-import Dispora1 from "../../assets/img/Dispora 1.png";
-import Grup2 from "../../assets/img/Group 2.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
 import { useReactToPrint } from "react-to-print";
 import LogoPemkab from "../../assets/img/minsel_300x300.png";
+import Header from "../Header";
 
 const DataPendaftar = () => {
   const [pendaftar, setPendaftar] = useState([]);
   const [page, setPage] = useState(0);
-  const limit = 10;
+  const limit = 18;
   let number = 10;
   const [pages, setPages] = useState(0);
   const [rows, setRows] = useState(0);
@@ -73,37 +72,25 @@ const DataPendaftar = () => {
   });
 
   return (
-    <div className="flex-col w-[1440px] max-h-full">
+    <div className="flex-col ">
       {/* <!-- navbar --> */}
-      <div className="flex w-[1440px] h-24 justify-between border-b-2 border-b-red-800">
-        <div className="flex">
-          <img className="w-72 h-20" src={Dispora1} alt="" />
-        </div>
-
-        <div className="flex items-center mr-6">
-          <img className="h-20" src={Grup2} alt="" />
-        </div>
-      </div>
+      <Header />
       {/* <!-- navbar end --> */}
-      <div className="flex justify-start">
-        <Link to={"/home-admin-kadis"}>
-          <p
-            className="py-4 px-6
-           bg-red-600  rounded-br-xl font-bold"
-          >
-            HOME
-          </p>
-        </Link>
-      </div>
+      <Link
+        to={"/home-admin-kadis"}
+        className="flex items-start justify-center bg-red-500 w-[80px] p-3 rounded-br-xl"
+      >
+        Beranda
+      </Link>
       {/* <!-- Content --> */}
       <div className="flex justify-center items-center">
-        <h1 className="text-4xl text-center">
+        <h1 className="text-lg mt-20 sm:text-xl md:text-2xl  lg:text-3xl text-center">
           Data Pendaftar Program Beasiswa
         </h1>
       </div>
       <hr className="mx-20" />
 
-      <div className="flex w-full justify-center items-start">
+      <div className="flex  justify-center items-start">
         <div className="flex flex-col items-center justify-center">
           <form
             onSubmit={searchData}
@@ -116,7 +103,7 @@ const DataPendaftar = () => {
                   onChange={(e) => setQuery(e.target.value)}
                   type="text"
                   placeholder="ketik nama peserta"
-                  className="input input-bordered w-full max-w-xl"
+                  className="input input-bordered  max-w-xl"
                 />
               </div>
               <button type="submit" className="btn btn-outline btn-accent">
@@ -125,10 +112,10 @@ const DataPendaftar = () => {
             </div>
           </form>
 
-          <div ref={ComponentPDF} className="">
+          <div ref={ComponentPDF} className="mx-[5%]">
             <div className="flex-col ">
               <div className="none pr-5 pl-5 pt-5 hidden pb-0 mb-1">
-                <div className="headerprint p-3 flex border-b-2 border-b-black">
+                <div className="headerprint justify-center p-3 flex border-b-2 border-b-black">
                   <img
                     src={LogoPemkab}
                     className="mr-3 w-[100px]"
@@ -163,29 +150,52 @@ const DataPendaftar = () => {
                 </div>
               </div>
 
-              <div className="overflow-x-auto my-11">
-                <table className="table w-[700px] justify-center  border ml-11 border-black">
+              <div className="overflow-x-auto ">
+                <table className="table table-xs min-[320px]:mx-[35%] min-[360px]:mx-[30%]  min-[440px]:mx-[25%] sm:mx-[15%] md:mx-[10%] lg:mx-0 xl:mx-0   justify-center items-center   border mt-10 mb-10  border-black">
                   {/* head */}
                   <thead>
                     <tr>
                       <th>No</th>
                       <th>Nama Pendaftar</th>
-                      <th>Umur</th>
-                      <th></th>
-                      <th></th>
+                      <th>Tempat Tanggal Lahir</th>
+                      <th>Fakultas/Universitas</th>
+                      <th>NIM</th>
+                      <th>IPK</th>
+                      <th>alamat</th>
+                      <th>No.HP</th>
                     </tr>
                   </thead>
                   <tbody>
                     {pendaftar.map((item, index) => (
                       <tr key={item.uuid}>
-                        <td className="p-4">{generateRowNumber(index)}</td>
-                        <td className="p-4">{item.nama_reg}</td>
-                        <td className="p-4">{item.umur_reg}</td>
-                        <td className="p-4">
+                        <td className="p-2 lg:p-3 ">
+                          {generateRowNumber(index)}
+                        </td>
+                        <td className="p-2 lg:p-3 ">{item.nama_reg}</td>
+                        <td className="p-2 lg:p-3 ">
+                          {item.tempat_tanggal_lahir}
+                        </td>
+                        <td className="p-2 lg:p-3 ">
+                          {item.fakultas}/{item.universitas}
+                        </td>
+                        <td className="p-2 lg:p-3 ">{item.nim}</td>
+                        <td className="p-2 lg:p-3 ">{item.IPK}</td>
+                        <td className="p-2 lg:p-3 ">{item.alamat}</td>
+                        <td className="p-2 lg:p-3 ">{item.no_telepon}</td>
+                        <td className="p-2 lg:p-3 "></td>
+                        <td className="p-2 lg:p-3 ">
                           <button className="aksi px-2 bg-slate-500 rounded-xl">
                             <Link to={`/detail-pendaftar-kadis/${item.uuid}`}>
                               Details
                             </Link>
+                          </button>
+                        </td>
+                        <td className="p-2 lg:p-3 ">
+                          <button
+                            onClick={(e) => deletePendaftar(item.id)}
+                            className="aksi px-2 bg-red-500 rounded-xl"
+                          >
+                            Hapus
                           </button>
                         </td>
                       </tr>
@@ -202,7 +212,7 @@ const DataPendaftar = () => {
           >
             PDF
           </button>
-          <div className="flex justify-center mt-4 rounded-sm">
+          <div className="flex justify-center mt-4 mb-10 rounded-sm">
             <nav
               className=""
               key={rows}

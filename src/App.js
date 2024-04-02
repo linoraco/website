@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import LoginAdmin from "./pages/admin/LoginAdmin";
 import HomePage from "./pages/user/HomePage";
 import ProdukHukum from "./pages/user/ProdukHukum";
-import ProgramBeasiswa from "./pages/user/TampilanProgram";
+
 import Renstra from "./pages/user/Renstra";
 import SejarahDinas from "./pages/user/SejarahDinas";
 import StrukturDinas from "./pages/user/StrukturDinas";
@@ -23,7 +23,7 @@ import AllBeritaOlahraga from "./pages/user/AllBeritaOlahraga";
 import TampilanBeritaOlahraga from "./pages/user/TampilanBeritaOlahraga";
 import AllProgramOlahraga from "./pages/user/AllProgramOlahraga";
 import TampilanProgram from "./pages/user/TampilanProgram";
-
+import TampilanProgramOlahraga from "./pages/user/TampilanProgramOlahraga";
 import DashboardKadis from "./components/kadis/DashboardKadis";
 import AddBeritaKadis from "./components/kadis/AddBerita";
 import AddBeritaOlahragaKadis from "./components/kadis/AddBeritaOlahraga";
@@ -41,6 +41,8 @@ import DataPendaftarKadis from "./components/kadis/DataPendaftar";
 import DetailPendaftarKadis from "./components/kadis/DetailPendaftar";
 import AddGaleriKadis from "./components/kadis/AddGaleri";
 import FormAddGaleriKadis from "./components/kadis/FormAddGaleri";
+import TampilanBeritaKadis from "./components/kadis/TampilanBeritaKadis";
+import TampilanBeritaOlahragaKadis from "./components/kadis/TampilanBeritaOlahragaKadis";
 
 import DashboardPemuda from "./components/pemuda/DashboardPemuda";
 import AddBeritapemuda from "./components/pemuda/AddBerita";
@@ -51,6 +53,7 @@ import EditProgrampemuda from "./components/pemuda/EditProgram";
 import EditBeritapemuda from "./components/pemuda/EditBerita";
 import DataPendaftarpemuda from "./components/pemuda/DataPendaftar";
 import DetailPendaftarpemuda from "./components/pemuda/DetailPendaftar";
+import TampilanBeritaPemuda from "./components/pemuda/TampilanBeritaPemuda";
 
 import DashboardOlahraga from "./components/olahraga/DashboardOlahraga";
 import AddBeritaOlahraga from "./components/olahraga/AddBeritaOlahraga";
@@ -59,6 +62,7 @@ import FormAddBeritaOlahraga from "./components/olahraga/FormAddBeritaOlahraga";
 import FormAddProgramOlahraga from "./components/olahraga/FormAddProgramOlahraga";
 import EditProgramOlahraga from "./components/olahraga/EditProgramOlahraga";
 import EditBeritaOlahraga from "./components/olahraga/EditBeritaOlahraga";
+import TampilanBeritaOlahragaOlahraga from "./components/olahraga/TampilanBeritaOlahraga";
 
 import AddForumOlahraga from "./components/kadis/AddForum";
 
@@ -72,7 +76,18 @@ import SuratKadis from "./components/kadis/SuratKadis";
 import FormAddSuratKadis from "./components/kadis/FormAddSuratKadis";
 import SuratSekretariat from "./components/kadis/SuratSekretariat";
 import FormAddSuratSekretariat from "./components/kadis/FormAddSuratSekretariat";
-import SuratOlahraga from "./components/kadis/SuratOlahraga";
+import SuratOlahragaKadis from "./components/kadis/SuratOlahraga";
+import FormAddSuratOlahragaKadis from "./components/kadis/FormAddSuratOlahraga";
+import SuratPemudaKadis from "./components/kadis/SuratPemuda";
+import FormAddSuratPemudaKadis from "./components/kadis/FormAddSuratPemuda";
+
+import SuratOlahraga from "./components/olahraga/SuratOlahraga";
+import FormAddSuratOlahraga from "./components/olahraga/FormAddSuratOlahraga";
+
+import SuratPemuda from "./components/pemuda/SuratPemuda";
+import FormAddSuratPemuda from "./components/pemuda/FormAddSuratPemuda";
+
+import TampilanProgramBeasiswa from "./pages/user/TampilanProgramBeasiswa";
 
 function App() {
   return (
@@ -81,7 +96,15 @@ function App() {
         {/* USER */}
         <Route path="/" element={<HomePage />} />
         <Route path="/produk-hukum" element={<ProdukHukum />} />
+        <Route
+          path="/tampilan-program-beasiswa"
+          element={<TampilanProgramBeasiswa />}
+        />
         <Route path="/tampilan-program/:id" element={<TampilanProgram />} />
+        <Route
+          path="/tampilan-program-olahraga/:id"
+          element={<TampilanProgramOlahraga />}
+        />
         <Route path="/renstra" element={<Renstra />} />
         <Route path="/sejarah-dinas" element={<SejarahDinas />} />
         <Route path="/struktur-dinas" element={<StrukturDinas />} />
@@ -161,7 +184,32 @@ function App() {
           path="/form-surat-kerja-sekretariat"
           element={<FormAddSuratSekretariat />}
         />
-        <Route path="/surat-kerja-olahraga" element={<SuratOlahraga />} />
+        <Route
+          path="/surat-kerja-olahraga-kadis"
+          element={<SuratOlahragaKadis />}
+        />
+        <Route
+          path="/form-surat-kerja-olahraga-kadis"
+          element={<FormAddSuratOlahragaKadis />}
+        />
+
+        <Route
+          path="/surat-kerja-pemuda-kadis"
+          element={<SuratPemudaKadis />}
+        />
+        <Route
+          path="/form-surat-kerja-pemuda-kadis"
+          element={<FormAddSuratPemudaKadis />}
+        />
+
+        <Route
+          path="/tampilan-berita-kadis/:id"
+          element={<TampilanBeritaKadis />}
+        />
+        <Route
+          path="/tampilan-berita-olahraga-kadis/:id"
+          element={<TampilanBeritaOlahragaKadis />}
+        />
 
         {/* Admin pemuda */}
         <Route path="/home-admin-pemuda" element={<DashboardPemuda />} />
@@ -197,6 +245,16 @@ function App() {
           path="/detail-pendaftar-pemuda/:id"
           element={<DetailPendaftarpemuda />}
         />
+        <Route
+          path="/tampilan-berita-pemuda/:id"
+          element={<TampilanBeritaPemuda />}
+        />
+
+        <Route path="/surat-kerja-pemuda" element={<SuratPemuda />} />
+        <Route
+          path="/form-surat-kerja-pemuda"
+          element={<FormAddSuratPemuda />}
+        />
 
         {/* Admin olahraga */}
         <Route path="/home-admin-olahraga" element={<DashboardOlahraga />} />
@@ -224,10 +282,22 @@ function App() {
           path="/add-program-olahraga/edit-program-olahraga/:id"
           element={<EditProgramOlahraga />}
         />
+        <Route
+          path="/tampilan-berita-olahraga-olahraga/:id"
+          element={<TampilanBeritaOlahragaOlahraga />}
+        />
+
+        <Route path="/surat-kerja-olahraga" element={<SuratOlahraga />} />
+        <Route
+          path="/form-surat-kerja-olahraga"
+          element={<FormAddSuratOlahraga />}
+        />
 
         {/* Forum  */}
         <Route path="/forum/*" element={<MainForum />}></Route>
         <Route path="/form-add-forum" element={<FormAddForum />} />
+
+        <Route path="pagesAdmin/*" element={<DashboardKadis />}></Route>
       </Routes>
     </div>
   );

@@ -8,6 +8,7 @@ import { useReactToPrint } from "react-to-print";
 import LogoPemkab from "../../assets/img/minsel_300x300.png";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Header from "../Header";
 
 const SuratSekretariat = () => {
   const [suratsekretariat, setSuratsekretariat] = useState([]);
@@ -55,7 +56,7 @@ const SuratSekretariat = () => {
         `http://localhost:4000/suratsekretariat/${id}`
       );
       if (response.status === 200) {
-        fetchDetailPendaftar();
+        getSuratSekretariat();
         window.location.reload();
       } else {
         console.log("Failed to delete");
@@ -93,31 +94,21 @@ const SuratSekretariat = () => {
   });
 
   return (
-    <div className="flex-col w-[1440px] max-h-full">
+    <div className="flex-col ">
       {/* <!-- navbar --> */}
-      <div className="flex w-[1440px] h-24 justify-between border-b-2 border-b-red-800">
-        <div className="flex">
-          <img className="w-72 h-20" src={Dispora1} alt="" />
-        </div>
-
-        <div className="flex items-center mr-6">
-          <img className="h-20" src={Grup2} alt="" />
-        </div>
-      </div>
+      <Header />
       {/* <!-- navbar end --> */}
-      <div className="flex justify-start">
-        <Link to={"/home-admin-kadis"}>
-          <p
-            className="py-4 px-6
-           bg-red-600  rounded-br-xl font-bold"
-          >
-            HOME
-          </p>
+      <div className="w-[80px]">
+        <Link
+          to={"/home-admin-kadis"}
+          className="flex items-start justify-center bg-red-500 w-[80px] p-3 rounded-br-xl"
+        >
+          Beranda
         </Link>
       </div>
       {/* <!-- Content --> */}
       <div className="flex justify-center items-center">
-        <h1 className="text-4xl text-center">
+        <h1 className="text-lg mt-20 sm:text-xl md:text-2xl  lg:text-3xl text-center">
           Surat Masuk/Keluar Bidang Kerja Sekretariat
         </h1>
       </div>
@@ -145,7 +136,7 @@ const SuratSekretariat = () => {
             </div>
           </form>
 
-          <div ref={ComponentPDF} className="">
+          <div ref={ComponentPDF} className="mx-[5%]">
             <div className="flex-col ">
               <div className="none pr-5 pl-5 pt-5 hidden pb-0 mb-1">
                 <div className="headerprint p-3 flex border-b-2 border-b-black">
@@ -184,7 +175,7 @@ const SuratSekretariat = () => {
               </div>
 
               <div className="overflow-x-auto my-11">
-                <table className="table w-[700px] justify-center  border ml-11 border-black">
+                <table className="table table-xs   max-[400px]:ml-24 max-[768px]:mx-[10%] lg:w-[800px] justify-center  border  border-black">
                   {/* head */}
                   <thead>
                     <tr>
@@ -207,7 +198,7 @@ const SuratSekretariat = () => {
                             <Link to={item.URL}>Details</Link>
                           </button>
                           <button
-                            // onClick={(e) => deleteSuratKadis(pendaftar.id)}
+                            onClick={(e) => deleteSuratSekretariat(item.id)}
                             className="aksi px-2 bg-red-500 rounded-xl"
                           >
                             Hapus

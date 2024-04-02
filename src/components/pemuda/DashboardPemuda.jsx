@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Routes, Route, Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Header from "../Header";
 
 import Copyofdispora from "../../assets/img/Copy of Dispora (1) 1.png";
-import { useSelector } from "react-redux";
 
 const DashboardPemuda = () => {
   return (
@@ -14,41 +13,45 @@ const DashboardPemuda = () => {
 
       {/* content */}
       <div
-        className="grid grid-cols-2 place-items-center place-content-center gap-4
-       py-30 mx-10"
+        className="grid  grid-cols-2  place-items-center place-content-center gap-4 my-10
+        py-30 mx-10"
       >
-        <button className="px-20">
+        <button className="">
           <Link to={"/add-berita-pemuda"}>
             <img src={Copyofdispora} alt="" />
-            <p className="text-xl font-semibold">
+            <p className="text-sm min-[319px]:text-xs sm:text-lg  lg:text-xl text-center mt-1 w-auto  font-semibold">
               Berita dan Pengumuman Pemuda
             </p>
           </Link>
         </button>
 
-        <button className="px-20">
+        <button className="">
           <Link to={"/add-program-pemuda"}>
             <img src={Copyofdispora} alt="" />
-            <p className="text-xl font-semibold">Program Pemuda</p>
+            <p className="text-sm min-[319px]:text-xs sm:text-lg  lg:text-xl text-center mt-1 w-auto  font-semibold">
+              Program Pemuda
+            </p>
           </Link>
         </button>
 
-        <button className="px-20">
+        <button className="">
           <Link to={"/data-pendaftar-pemuda"}>
             <img src={Copyofdispora} alt="" />
-            <p className="text-xl font-semibold">Program Beasiswa</p>
+            <p className="text-sm min-[319px]:text-xs sm:text-lg  lg:text-xl text-center mt-1 w-auto  font-semibold">
+              Program Beasiswa
+            </p>
+          </Link>
+        </button>
+        <button className="">
+          <Link to={"/surat-kerja-pemuda"}>
+            <img src={Copyofdispora} alt="" />
+            <p className="text-sm min-[319px]:text-xs sm:text-lg  lg:text-xl text-center mt-1 w-auto  font-semibold">
+              Surat Kerja Pemuda
+            </p>
           </Link>
         </button>
       </div>
       {/* content end */}
-      {/* <!-- Logout --> */}
-      <div className="flex justify-end mt-[-90px] mr-6">
-        <Link to={"/login"}>
-          <button className="bg-red-700 py-2 px-10 text-white rounded-lg">
-            Logout
-          </button>
-        </Link>
-      </div>
     </>
   );
 };

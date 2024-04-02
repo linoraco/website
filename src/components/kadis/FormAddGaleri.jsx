@@ -5,6 +5,7 @@ import Grup3 from "../../assets/img/Group 3.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Header from "../Header";
 
 const FormAddGaleri = () => {
   const [file, setFile] = useState("");
@@ -41,44 +42,35 @@ const FormAddGaleri = () => {
   };
 
   return (
-    <div className="flex-col w-[1440px] max-h-full">
+    <div className="flex-col ">
       {/* <!-- navbar --> */}
-      <div className="flex w-[1440px] h-24 justify-between border-b-2 border-b-red-800">
-        <div className="flex">
-          <img className="w-72 h-20" src={Dispora1} alt="" />
-        </div>
-
-        <div className="flex items-center mr-6">
-          <img className="h-20" src={Grup2} alt="" />
-        </div>
-      </div>
+      <Header />
       {/* <!-- navbar end -->  */}
       <div className="flex justify-between">
         <Link to={"/add-galeri-kadis"}>
-          <p
-            className="py-4 px-6
-           bg-red-600 rounded-tr-xl rounded-br-xl font-bold"
-          >
-            BACK
+          <p className="flex items-start justify-center bg-red-500 w-[80px] p-3 rounded-br-xl">
+            Kembali
           </p>
         </Link>
         <Link to={"/home-admin-kadis"}>
-          <p
-            className="py-4 px-6
-           bg-red-600 rounded-tl-xl rounded-bl-xl font-bold"
-          >
-            HOME
+          <p className="flex items-start justify-center bg-red-500 w-[80px] p-3 rounded-bl-xl">
+            Beranda
           </p>
         </Link>
       </div>
 
-      <div className="mx-40">
-        <h1 className="text-4xl py-10">Galeri</h1>
+      <div className="mx-auto">
+        <h1 className="text-lg mt-20 sm:text-xl md:text-2xl  lg:text-3xl text-center">
+          Galeri
+        </h1>
       </div>
 
       {/* form prgram star */}
-      <form onSubmit={sendData} className="flex flex-col mx-40">
-        <label className="p-2 text-2xl" for="">
+      <form
+        onSubmit={sendData}
+        className="flex flex-col mx-[5%] sm:mx-[10%] md:mx-[15%]  lg:mx-[20%] mt-10 "
+      >
+        <label className="p-2  text-md sm:text-md md:text-lg lg:text-xl" for="">
           Gambar Galeri Dinas
         </label>
         <input
@@ -100,7 +92,7 @@ const FormAddGaleri = () => {
         <button
           type="submit"
           value=""
-          className="flex justify-center bg-green-500 py-3 mx-96 rounded-xl my-10"
+          className="flex justify-center bg-green-500 py-3  rounded-xl my-10"
         >
           SIMPAN
           <input type="submit" value="" />

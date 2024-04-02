@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Dispora1 from "../../assets/img/Dispora 1.png";
-import Grup2 from "../../assets/img/Group 2.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
@@ -8,8 +6,9 @@ import { useReactToPrint } from "react-to-print";
 import LogoPemkab from "../../assets/img/minsel_300x300.png";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import Header from "../Header";
 
-const SuratKadis = () => {
+const SuratOlahraga = () => {
   const [suratolahraga, setSuratolahraga] = useState([]);
   const [page, setPage] = useState(0);
   const limit = 10;
@@ -55,7 +54,7 @@ const SuratKadis = () => {
         `http://localhost:4000/suratolahraga/${id}`
       );
       if (response.status === 200) {
-        fetchDetailPendaftar();
+        getSuratOlahraga();
         window.location.reload();
       } else {
         console.log("Failed to delete");
@@ -93,31 +92,21 @@ const SuratKadis = () => {
   });
 
   return (
-    <div className="flex-col w-[1440px] max-h-full">
+    <div className="flex-col ">
       {/* <!-- navbar --> */}
-      <div className="flex w-[1440px] h-24 justify-between border-b-2 border-b-red-800">
-        <div className="flex">
-          <img className="w-72 h-20" src={Dispora1} alt="" />
-        </div>
-
-        <div className="flex items-center mr-6">
-          <img className="h-20" src={Grup2} alt="" />
-        </div>
-      </div>
+      <Header />
       {/* <!-- navbar end --> */}
-      <div className="flex justify-start">
-        <Link to={"/home-admin-kadis"}>
-          <p
-            className="py-4 px-6
-           bg-red-600  rounded-br-xl font-bold"
-          >
-            HOME
-          </p>
+      <div className="w-[80px]">
+        <Link
+          to={"/home-admin-kadis"}
+          className="flex items-start justify-center bg-red-500 w-[80px] p-3 rounded-br-xl"
+        >
+          Beranda
         </Link>
       </div>
       {/* <!-- Content --> */}
       <div className="flex justify-center items-center">
-        <h1 className="text-4xl text-center">
+        <h1 className="text-lg mt-20 sm:text-xl md:text-2xl  lg:text-3xl text-center">
           Surat Masuk/Keluar Bidang Kerja Olahraga
         </h1>
       </div>
@@ -145,7 +134,7 @@ const SuratKadis = () => {
             </div>
           </form>
 
-          <div ref={ComponentPDF} className="">
+          <div ref={ComponentPDF} className="mx-[5%]">
             <div className="flex-col ">
               <div className="none pr-5 pl-5 pt-5 hidden pb-0 mb-1">
                 <div className="headerprint p-3 flex border-b-2 border-b-black">
@@ -184,7 +173,7 @@ const SuratKadis = () => {
               </div>
 
               <div className="overflow-x-auto my-11">
-                <table className="table w-[700px] justify-center  border ml-11 border-black">
+                <table className="table table-xs  max-[400px]:ml-28 max-[768px]:mx-[10%] lg:w-[800px]  justify-center  border  border-black">
                   {/* head */}
                   <thead>
                     <tr>
@@ -205,7 +194,7 @@ const SuratKadis = () => {
                             <Link to={item.URL}>Details</Link>
                           </button>
                           <button
-                            // onClick={(e) => deleteSuratolahraga(pendaftar.id)}
+                            onClick={(e) => deleteSuratOlahraga(item.id)}
                             className="aksi px-2 bg-red-500 rounded-xl"
                           >
                             Hapus
@@ -227,7 +216,7 @@ const SuratKadis = () => {
               PDF
             </button>
             <Link
-              to={"/form-surat-kerja-kadis"}
+              to={"/form-surat-kerja-olahraga-kadis"}
               type="submit"
               className="btn btn-outline btn-accent bg-green-500"
             >
@@ -272,4 +261,4 @@ const SuratKadis = () => {
   );
 };
 
-export default SuratKadis;
+export default SuratOlahraga;

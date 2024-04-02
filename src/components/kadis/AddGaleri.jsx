@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import Dispora1 from "../../assets/img/Dispora 1.png";
 import Grup2 from "../../assets/img/Group 2.png";
 import Grup3 from "../../assets/img/Group 3.png";
-import Copyofdispora from "../../assets/img/Copy of Dispora (1) 1.png";
-import Grup4 from "../../assets/img/Group 4.png";
-import Grup5 from "../../assets/img/Group 5.png";
+import Header from "../Header";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -44,17 +42,9 @@ const AddGaleri = () => {
 
   return (
     <>
-      <div className="flex-col w-[1440px] max-h-full">
+      <div className="flex-col ">
         {/* <!-- navbar --> */}
-        <div className="flex w-[1440px] h-24 justify-between border-b-2 border-b-red-800">
-          <div className="flex">
-            <img className="w-72 h-20" src={Dispora1} alt="" />
-          </div>
-
-          <div className="flex items-center mr-6">
-            <img className="h-20" src={Grup2} alt="" />
-          </div>
-        </div>
+        <Header />
 
         <div>
           <Link to={"/home-admin-kadis"}>
@@ -62,31 +52,34 @@ const AddGaleri = () => {
           </Link>
         </div>
 
-        <div className="mx-40">
-          <h1 className="text-4xl py-10">Galeri Dinas</h1>
-          <button className="px-10 py-3 my-10 rounded-xl text-xl bg-green-500">
-            <Link to={"/form-addgaleri-kadis"}>
-              <span>+</span>Tambah Galeri
+        <div className="">
+          <h1 className="text-lg mt-20 sm:text-xl md:text-2xl  lg:text-3xl text-center">
+            Galeri Dinas
+          </h1>
+          <button className="py-2 lg:p-3 mx-10   px-2 my-10 rounded-md text-xs bg-green-500">
+            <Link
+              className="text-[13px] lg:text-[17px] sm:text-[15px] md:text-[16px]"
+              to={"/form-addgaleri-kadis"}
+            >
+              <span>+</span>Tambah Foto
             </Link>
           </button>
         </div>
 
         {/* tampilan admin galeri */}
-        <div className="grid grid-cols-3 place-items-center gap-4 py-6">
+        <div className="container mx-auto grid lg:mt-28  grid-cols-1 min-[570px]:grid-cols-2  md:grid-cols-2  sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-3 place-items-center my-10">
           {data.map((item) => (
-            <div className=" justify-center items-center">
-              <div>
-                <img className="h-72  rounded-xl" src={item.URL} alt="" />
+            <div className="avatar my-4 flex-col">
+              <div className="w-[200px]  min-[360px]:w-[250px]   xl:w-[350px]  lg:w-[300px]  md:w-72  sm:w-64 shadow-lg rounded-xl">
+                <img src={item.URL} />
               </div>
-              <div className="flex justify-center">
-                <button
-                  onClick={() => deleteGaleri(item && item.id)}
-                  className="py-1 px-6
+              <button
+                onClick={() => deleteGaleri(item && item.id)}
+                className="py-1 px-6 mx-auto
                     bg-red-600 rounded-xl font-bold"
-                >
-                  Hapus
-                </button>
-              </div>
+              >
+                Hapus
+              </button>
             </div>
           ))}
         </div>

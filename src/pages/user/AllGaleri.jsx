@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/ComponenRespon/Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
@@ -20,25 +20,24 @@ const AllGaleri = () => {
   useEffect(() => {
     getGaleri();
   }, []);
-  console.log(galeri);
+
   return (
     <>
-      <div className="flex-col w-[1440px] max-h-full">
+      <div className="flex-col ">
         {/* <!-- navbar --> */}
         <Navbar />
         {/* <!-- navbar end --> */}
-        <br />
-        <br />
-        <br />
+
         {/* <!-- Content --> */}
-        <div className="grid grid-cols-3 place-items-center">
-          {Galeri.map((galeri) => (
-            <div className="avatar my-4">
-              <div className="w-96 rounded">
-                <img src={galeri.gambar} />
+        <div className="container mx-auto grid lg:mt-28  grid-cols-1 min-[570px]:grid-cols-2  md:grid-cols-2  sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-3 place-items-center my-10">
+          {galeri &&
+            galeri.map((galeris) => (
+              <div className="avatar my-4">
+                <div className="w-[200px]  min-[360px]:w-[250px]   xl:w-[350px]  lg:w-[300px]  md:w-72  sm:w-64 shadow-lg rounded-xl">
+                  <img src={galeris && galeris.URL} />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
         <br />
         <br />

@@ -3,10 +3,15 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginUser, reset } from "../../features/authSlice";
+import DashboardKadis from "../../components/kadis/DashboardKadis";
+import DashboardPemuda from "../../components/pemuda/DashboardPemuda";
+import DashboardOlahraga from "../../components/olahraga/DashboardOlahraga";
 
 const LoginAdmin = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isSigningIn, setIsSigningIn] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { user, isError, isSuccess, isLoading, message } = useSelector(

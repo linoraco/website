@@ -1,42 +1,46 @@
 import React from "react";
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/ComponenRespon/Navbar";
 import Footer from "../../components/Footer";
+import Bgdispora from "../../assets/img/bgdisporanewjpg.jpg";
 
 const Tupoksi = () => {
   return (
-    <div className="flex-col w-[1440px] max-h-full">
+    <div className="">
       {/* <!-- navbar --> */}
       <Navbar />
       {/* <!-- navbar end --> */}
-      <br />
-      <br />
-      <br />
+
       {/* <!-- Content --> */}
-      <div className="flex justify-center items-center">
-        <h1 className="text-4xl text-center">Tugas Pokok dan Fungsi Dinas</h1>
+      <div
+        style={{ backgroundImage: `url(${Bgdispora})` }}
+        className="flex justify-center items-center bg-auto bg-center bg-fixed py-28 mb-3"
+      >
+        <h1 className="text-3xl max-md:text-xl text-white text-center font-bold">
+          Tugas Pokok dan Fungsi Dinas
+        </h1>
       </div>
-      <br />
-      <br />
-      <hr className="mx-20" />
-      <br />
-      <br />
-      <br />
+
+      <hr className="mt-4 mx-20" />
+
       {/* <!-- Visi misi --> */}
-      <div className="mx-20">
-        <div>
-          <h1 className="text-2xl text-justify font-semibold">TUGAS POKOK:</h1>
-          <p className="text-xl text-justify mt-5">
+      <div className="">
+        <div className=" mt-20 mx-[10%] md:mx-[15%] lg:mx-[20%] ">
+          <h1 className="text-sm sm:text-lg  lg:text-xl mt-1  text-justify font-semibold">
+            TUGAS POKOK:
+          </h1>
+          <p className="text-xs sm:text-sm  md:text-md lg:text-lg mt-5 text-justify">
             Berdasarkan Peraturan Gubernur No. 57 Tahun 2022, Dinas Pemuda dan
             Olahraga mempunyai tugas menyelenggarakan urusan pemerintahan bidang
             kepemudaan dan olahraga yang menjadi kewenangan daerah.
           </p>
         </div>
-        <br />
-        <br />
-        <div>
-          <h1 className="text-2xl text-justify font-semibold">FUNGSI:</h1>
-          <br />
-          <p className="text-xl text-justify">
+
+        <div className=" mt-20 mx-[10%] md:mx-[15%] lg:mx-[20%] ">
+          <h1 className="text-sm sm:text-lg  lg:text-2xl mt-1 text-justify font-semibold">
+            FUNGSI:
+          </h1>
+
+          <p className="text-xs sm:text-sm  md:text-md lg:text-lg mt-5 text-justify">
             <ol className="list-disc">
               <li className="mt-10px">
                 penyusunan Rencana Strategis, Rencana Kerja, dan Rencana Kerja

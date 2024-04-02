@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Dispora1 from "../../assets/img/Dispora 1.png";
-import Grup2 from "../../assets/img/Group 2.png";
-import Grup3 from "../../assets/img/Group 3.png";
-import Copyofdispora from "../../assets/img/Copy of Dispora (1) 1.png";
 import Grup4 from "../../assets/img/Group 4.png";
 import Grup5 from "../../assets/img/Group 5.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Header from "../Header";
 
 const AddProgramOlahraga = () => {
   const [data, setData] = useState([]);
@@ -46,61 +43,67 @@ const AddProgramOlahraga = () => {
   }, []);
 
   return (
-    <div className="flex-col w-[1440px] max-h-full">
+    <div className="flex-col ">
       {/* <!-- navbar --> */}
-      <div className="flex w-[1440px] h-24 justify-between border-b-2 border-b-red-800">
-        <div className="flex">
-          <img className="w-72 h-20" src={Dispora1} alt="" />
-        </div>
+      <Header />
 
-        <div className="flex items-center mr-6">
-          <img className="h-20" src={Grup2} alt="" />
-        </div>
-      </div>
-
-      <div>
-        <Link to={"/home-admin-kadis"}>
-          <img className="h-14" src={Grup3} alt="" />
+      <div className="w-[80px]">
+        <Link
+          to={"/home-admin-kadis"}
+          className="flex items-start justify-center bg-red-500 w-[80px] p-3 rounded-br-xl"
+        >
+          Beranda
         </Link>
       </div>
 
-      <div className="mx-40">
-        <h1 className="text-4xl py-10">Program Olahraga</h1>
-        <button className="px-10 py-3 my-10 rounded-xl text-xl bg-green-500">
-          <Link to={"/form-addprogram-olahraga-kadis"}>
+      <div className="">
+        <h1 className="text-lg mt-20 sm:text-xl md:text-2xl  lg:text-3xl text-center">
+          Program Olahraga
+        </h1>
+        <button className="py-2 lg:p-3 mx-10   px-2 my-10 rounded-md text-xs bg-green-500">
+          <Link
+            className="text-[13px] lg:text-[17px] sm:text-[15px] md:text-[16px]"
+            to={"/form-addprogram-olahraga-kadis"}
+          >
             <span>+</span>Tambah Program Olahraga
           </Link>
         </button>
       </div>
 
       {/* tampilan program admin */}
-      <div className="grid grid-rows-2  py-10">
+      <div className="container mx-auto grid lg:mt-28  grid-cols-1 min-[570px]:grid-cols-2  md:grid-cols-2  sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-3 place-items-center my-10">
         {data.map((item) => (
-          <div className="h-80 mx-40 mb-24 flex items-center">
-            <img className="h-80  rounded-xl" src={item.URL} alt="" />
-
-            <div className="p-5 flex flex-col items-center w-[400px] h-80 bg-[#D9D9D9] rounded-xl">
-              <h1 className="font-semibold text-xl py-2 text-center">
-                Nama Program : {item.nama_program_olahraga}
-              </h1>
-              <p className="font-semibold text-xl py-2">
-                Nama Author : {item.nama_pembuat_program_olahraga}
-              </p>
-              <h1 className="font-semibold text-xl py-2">
-                Kontak Admin : {item.kontak_admin_program_olahraga}
-              </h1>
-              <div className="flex justify-end">
+          <div className=" card w-[200px] h-[280px] min-[360px]:w-[250px] min-[360px]:h-[300px]  xl:w-[350px] xl:h-[500px] lg:w-[300px] lg:h-[450px] md:w-72 md:h-[380px] sm:w-64 sm:h-[330px] bg-base-100 shadow-xl my-4">
+            <figure>
+              <img className="" src={item.URL} alt="Shoes" />
+            </figure>
+            <div className="card-body">
+              <h2 className="card-title  text-center flex-col text-[13px] lg:text-[17px] sm:text-[15px] md:text-[16px]">
+                {item.nama_program_olahraga}
+              </h2>
+              {/* <p>{item.isi_berita.slice(0, 100)}....</p> */}
+              <div className="flex h-[17px] justify-end">
                 <Link
                   to={`/add-program-olahraga-kadis/edit-program-olahraga-kadis/${item.id}`}
-                  className="p-4"
+                  className="
+                     rounded-xl font-bold mr-2"
                 >
-                  <img className="h-10" src={Grup4} alt="" />
+                  <img
+                    className="h-[20px] sm:h-[25px] lg:h-[30px]"
+                    src={Grup4}
+                    alt=""
+                  />
                 </Link>
                 <button
-                  onClick={() => deleteProgram(item.uuid)}
-                  className="p-4"
+                  onClick={(e) => deleteProgram(item.uuid)}
+                  className="
+                    bg-red-600 rounded-xl font-bold"
                 >
-                  <img className="h-10" src={Grup5} alt="" />
+                  <img
+                    className="h-[20px] sm:h-[25px] lg:h-[30px]"
+                    src={Grup5}
+                    alt=""
+                  />
                 </button>
               </div>
             </div>
