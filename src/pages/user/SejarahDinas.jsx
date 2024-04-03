@@ -121,8 +121,9 @@ const SejarahDinas = () => {
                 Dinas Pemuda dan Olahraga
               </div>
               <div className="text-justify">
-                ​Kepala Daerah Kabupaten Minahasa Selatan yang baru yaitu bapak
-                Bupati Frangky Donny Wongkar,SH dan didukung Anggota DPRD
+                Kepala daerah dan wakil kepala daerah Kabupaten Minahasa Selatan
+                yang baru yaitu bapak Bupati Frangky Donny Wongkar,SH dan bapak
+                Wakil Bupati Pdt Petra Yanny Rembang,MTh didukung Anggota DPRD
                 Kabupaten Minahasa Selatan menyetujui pembahasan perubahan
                 Organisasi Perangkat Daerah yang baru. Pada awal tahun 2022
                 diperdakan Peraturan Daerah Nomor 1 Tahun 2022 tentang
