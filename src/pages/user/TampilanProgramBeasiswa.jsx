@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ReactWhatsapp from "react-whatsapp";
-import Foto from "../../assets/img/foto2.jpeg";
+import Foto from "../../assets/img/brosurBeasiswa2024.jpg";
 
 const TampilanProgramBeasiswa = () => {
   const [data, setData] = useState([]);
