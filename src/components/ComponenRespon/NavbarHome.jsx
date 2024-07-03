@@ -42,10 +42,10 @@ const NavbarHome = () => {
                 tabIndex={0}
                 className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white  rounded-box w-52"
               >
-                <li className="hover:bg-red-500 rounded-md">
+                <li className="text-[14px]  lg:text-md xl:text-lg font-semibold">
                   <details>
                     <summary>PROFIL DINAS</summary>
-                    <ul className="p-2  text-sm">
+                    <ul className="p-2 bg-red-500/60 text-sm">
                       <li className="hover:bg-white duration-300 rounded-md">
                         <Link to={"/sejarah-dinas"}>SEJARAH DINAS</Link>
                       </li>
@@ -58,14 +58,11 @@ const NavbarHome = () => {
                       <li className="hover:bg-white duration-300 rounded-md">
                         <Link to={"/struktur-dinas"}>STRUKTUR DINAS</Link>
                       </li>
-                      <li className="hover:bg-white duration-300 rounded-md">
-                        <Link to={"/renstra"}>RENSTRA</Link>
-                      </li>
-                      <li className="hover:bg-white duration-300 rounded-md">
-                        <Link to={"/produk-hukum"}>PRODUK HUKUM</Link>
-                      </li>
                     </ul>
                   </details>
+                </li>
+                <li className="text-[14px]  lg:text-md xl:text-lg font-semibold">
+                  <Link to="/lakip">DOKUMEN</Link>
                 </li>
                 <li className="hover:bg-red-500 rounded-md">
                   <details>
@@ -133,14 +130,11 @@ const NavbarHome = () => {
                   <li className="hover:bg-white duration-300 rounded-md">
                     <Link to={"/struktur-dinas"}>STRUKTUR DINAS</Link>
                   </li>
-                  <li className="hover:bg-white duration-300 rounded-md">
-                    <Link to={"/renstra"}>RENSTRA</Link>
-                  </li>
-                  <li className="hover:bg-white duration-300 rounded-md">
-                    <Link to={"/produk-hukum"}>PRODUK HUKUM</Link>
-                  </li>
                 </ul>
               </details>
+            </li>
+            <li className="text-[14px]  lg:text-md xl:text-lg font-semibold">
+              <Link to="/dokumen">DOKUMEN</Link>
             </li>
             <li className="text-[14px]  lg:text-md xl:text-lg font-semibold">
               <details>

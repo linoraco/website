@@ -88,6 +88,9 @@ import SuratPemuda from "./components/pemuda/SuratPemuda";
 import FormAddSuratPemuda from "./components/pemuda/FormAddSuratPemuda";
 
 import TampilanProgramBeasiswa from "./pages/user/TampilanProgramBeasiswa";
+import Lakip from "./pages/user/Lakip";
+import Dokumen from "./pages/user/Dokumen";
+import Rkt from "./pages/user/Rkt";
 
 function App() {
   return (
@@ -105,6 +108,8 @@ function App() {
           path="/tampilan-program-olahraga/:id"
           element={<TampilanProgramOlahraga />}
         />
+        <Route path="/dokumen" element={<Dokumen />} />
+        <Route path="/dokumen/rkt" element={<Rkt />} />
         <Route path="/renstra" element={<Renstra />} />
         <Route path="/sejarah-dinas" element={<SejarahDinas />} />
         <Route path="/struktur-dinas" element={<StrukturDinas />} />
