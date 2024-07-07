@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Dispora1 from "../../assets/img/Dispora 1.png";
 import axios from "axios";
+import config from "../../config/config";
 
 const FormBeasiswa = () => {
   // const { id } = useParams();
@@ -98,7 +99,7 @@ const FormBeasiswa = () => {
     formData.append("gambar_proposalakhir", fotokopipropo);
     try {
       const response = await axios.post(
-        "http://localhost:4000/regprogram",
+        `${config.ipPUBLIC}/regprogram`,
         formData
       );
       //  navigate("/panduan");

@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
 import Beritaolahraga from "../../helper/beritaolahraga.json";
+import config from "../../config/config";
 
 const AllBeritaOlahraga = () => {
   const [data, setData] = useState([]);
 
   const getBeritaOlahraga = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/beritaolahraga");
+      const response = await axios.get(`${config.ipPUBLIC}/beritaolahraga`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {

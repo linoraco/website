@@ -4,6 +4,7 @@ import Grup4 from "../../assets/img/Group 4.png";
 import Grup5 from "../../assets/img/Group 5.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import config from "../../config/config.js";
 
 const AddProgram = () => {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const AddProgram = () => {
 
   const getProgram = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/program");
+      const response = await axios.get(`${config.ipPUBLIC}/program`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -22,9 +23,7 @@ const AddProgram = () => {
 
   const deleteProgram = async (id) => {
     try {
-      const response = await axios.delete(
-        `http://localhost:4000/program/${id}`
-      );
+      const response = await axios.delete(`${config.ipPUBLIC}/program/${id}`);
       getProgram();
       window.location.reload();
     } catch (error) {

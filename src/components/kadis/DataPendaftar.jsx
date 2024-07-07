@@ -5,6 +5,7 @@ import ReactPaginate from "react-paginate";
 import { useReactToPrint } from "react-to-print";
 import LogoPemkab from "../../assets/img/minsel_300x300.png";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const DataPendaftar = () => {
   const [pendaftar, setPendaftar] = useState([]);
@@ -20,7 +21,7 @@ const DataPendaftar = () => {
 
   const getPendaftar = async () => {
     const response = await axios.get(
-      `http://localhost:4000/regprogram?search_query=${keyword}&page=${page}&limit=${limit}`
+      `${config.ipPUBLIC}/regprogram?search_query=${keyword}&page=${page}&limit=${limit}`
     );
     setPage(response.data.page);
     setPages(response.data.totalPage);
@@ -35,7 +36,7 @@ const DataPendaftar = () => {
   const deletePendaftar = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/regprogram/${id}`
+        `${config.ipPUBLIC}/regprogram/${id}`
       );
       getPendaftar();
       window.location.reload();

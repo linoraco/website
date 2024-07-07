@@ -68,8 +68,6 @@ import AddForumOlahraga from "./components/kadis/AddForum";
 
 import HakAksesAdmin from "./components/HakAksesAdmin";
 
-import MainForum from "./pages/admin/MainForum";
-
 import FormAddForum from "./components/kadis/FormAddForum";
 
 import SuratKadis from "./components/kadis/SuratKadis";
@@ -299,7 +297,7 @@ function App() {
         />
 
         {/* Forum  */}
-        <Route path="/forum/*" element={<MainForum />}></Route>
+        {/* <Route path="/forum/*" element={<MainForum />}></Route> */}
         <Route path="/form-add-forum" element={<FormAddForum />} />
 
         <Route path="pagesAdmin/*" element={<DashboardKadis />}></Route>

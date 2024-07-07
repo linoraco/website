@@ -4,6 +4,7 @@ import Grup5 from "../../assets/img/Group 5.png";
 import { Link, Navigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../Header";
+import config from "../../config/config";
 
 const AddBeritaOlahraga = () => {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const AddBeritaOlahraga = () => {
 
   const getBeritaOlahraga = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/beritaolahraga");
+      const response = await axios.get(`${config.ipPUBLIC}/beritaolahraga`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -23,7 +24,7 @@ const AddBeritaOlahraga = () => {
   const deleteBerita = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/beritaolahraga/${id}`
+        `${config.ipPUBLIC}/beritaolahraga/${id}`
       );
       getBeritaOlahraga();
       Navigate("/add-berita-olahraga-kadis");

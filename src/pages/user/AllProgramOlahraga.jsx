@@ -3,13 +3,13 @@ import Navbar from "../../components/ComponenRespon/Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
-import Programolahraga from "../../helper/programolahraga.json";
+import config from "../../config/config";
 
 const AllProgramOlahraga = () => {
   const [data, setData] = useState([]);
   const getProgramOlahraga = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/programolahraga");
+      const response = await axios.get(`${config.ipPUBLIC}/programolahraga`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {

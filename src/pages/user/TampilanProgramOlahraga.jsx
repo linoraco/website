@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import ReactWhatsapp from "react-whatsapp";
+import Config from "../../config/config";
 
 const TampilanProgramOlahraga = () => {
   const [data, setData] = useState([]);
@@ -13,7 +14,7 @@ const TampilanProgramOlahraga = () => {
 
   const getProgram = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/programolahraga");
+      const response = await axios.get(`${Config.ipPUBLIC}/programolahraga`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -28,7 +29,7 @@ const TampilanProgramOlahraga = () => {
   const getProgramById = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/programolahraga/${id}`
+        `${Config.ipPUBLIC}/programolahraga/${id}`
       );
       setProgram(response.data);
     } catch (error) {

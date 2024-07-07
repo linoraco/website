@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const TampilanBeritaKadis = () => {
   const { id } = useParams();
@@ -12,7 +13,7 @@ const TampilanBeritaKadis = () => {
 
   const getBeritaById = async () => {
     try {
-      const response = await axios.get(`http://localhost:4000/berita/${id}`);
+      const response = await axios.get(`${config.ipPUBLIC}/berita/${id}`);
       setBerita(response.data);
     } catch (error) {
       console.log(error);
@@ -21,7 +22,7 @@ const TampilanBeritaKadis = () => {
 
   const deleteBerita = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:4000/berita/${id}`);
+      const response = await axios.delete(`${config.ipPUBLIC}/berita/${id}`);
       getBeritaById();
       navigate("/add-berita-kadis");
     } catch (error) {

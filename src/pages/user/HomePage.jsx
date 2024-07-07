@@ -23,6 +23,8 @@ import { FreeMode, Pagination } from "swiper/modules";
 
 import { RxArrowTopRight } from "react-icons/rx";
 import NavbarHome from "../../components/ComponenRespon/NavbarHome";
+import Config from "../../config/config.js";
+
 const HomePage = () => {
   const [data, setData] = useState([]);
   const [dataOlahraga, setDataOlahraga] = useState([]);
@@ -91,7 +93,7 @@ const HomePage = () => {
 
   const getBerita = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/berita");
+      const response = await axios.get(`${Config.ipPUBLIC}/berita`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -101,7 +103,7 @@ const HomePage = () => {
 
   const getBeritaOlahraga = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/beritaolahraga");
+      const response = await axios.get(`${Config.ipPUBLIC}/beritaolahraga`);
       setDataOlahraga(response.data);
       console.log(response.data);
     } catch (error) {
@@ -111,7 +113,7 @@ const HomePage = () => {
 
   const getProgram = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/program");
+      const response = await axios.get(`${Config.ipPUBLIC}/program`);
       setProgram(response.data);
       console.log(response.program);
     } catch (error) {
@@ -121,7 +123,7 @@ const HomePage = () => {
 
   const getProgramOlahraga = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/programolahraga");
+      const response = await axios.get(`${Config.ipPUBLIC}/programolahraga`);
       setProgramOlahraga(response.data);
       console.log(response.program);
     } catch (error) {
@@ -131,7 +133,7 @@ const HomePage = () => {
 
   const getGaleri = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/galeri");
+      const response = await axios.get(`${Config.ipPUBLIC}/galeri`);
       setGaleri(response.data);
       console.log(response.data);
     } catch (error) {

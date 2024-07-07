@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const DetailPendaftar = () => {
   const [pendaftar, setPendaftar] = useState({});
@@ -13,9 +14,7 @@ const DetailPendaftar = () => {
 
   const fetchDetailPendaftar = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:4000/regprogram/${id}`
-      );
+      const response = await axios.get(`${config.ipPUBLIC}/regprogram/${id}`);
       setPendaftar(response.data);
     } catch (error) {
       console.log(error);
@@ -26,7 +25,7 @@ const DetailPendaftar = () => {
   const deletePendaftar = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/regprogram/${id}`
+        `${config.ipPUBLIC}/regprogram/${id}`
       );
       if (response.status === 200) {
         fetchDetailPendaftar();

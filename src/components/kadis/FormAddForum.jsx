@@ -5,6 +5,7 @@ import Grup3 from "../../assets/img/Group 3.png";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import config from "../../config/config.js";
 
 const FormAddForum = () => {
   const [title, setTitle] = useState([]);
@@ -38,7 +39,7 @@ const FormAddForum = () => {
     formData.append("kategori", kategori);
 
     try {
-      await axios.post("http://localhost:4000/forum", formData, {
+      await axios.post(`${config.ipPUBLIC}/forum`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

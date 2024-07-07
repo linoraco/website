@@ -3,14 +3,15 @@ import Navbar from "../../components/ComponenRespon/Navbar";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
-import Beritapemuda from "../../helper/beritapemuda.json";
+
+import Config from "../../config/config.js";
 
 const AllBerita = () => {
   const [data, setData] = useState([]);
 
   const getBerita = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/berita");
+      const response = await axios.get(`${Config.ipPUBLIC}/berita`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {

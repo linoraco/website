@@ -3,6 +3,7 @@ import Navbar from "../../components/ComponenRespon/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Config from "../../config/config.js";
 
 const TampilanBeritaOlahraga = () => {
   const [data, setData] = useState([]);
@@ -11,7 +12,7 @@ const TampilanBeritaOlahraga = () => {
 
   const getBeritaOlahraga = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/beritaolahraga");
+      const response = await axios.get(`${Config.ipPUBLIC}/beritaolahraga`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -26,7 +27,7 @@ const TampilanBeritaOlahraga = () => {
   const getBeritaOlahragaById = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/beritaolahraga/${id}`
+        `${Config.ipPUBLIC}/beritaolahraga/${id}`
       );
       setBerita(response.data);
     } catch (error) {

@@ -4,13 +4,14 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import Footer from "../../components/Footer";
 import Galeri from "../../helper/galeri.json";
+import config from "../../config/config";
 
 const AllGaleri = () => {
   const [galeri, setGaleri] = useState([]);
 
   const getGaleri = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/galeri");
+      const response = await axios.get(`${config.ipPUBLIC}/galeri`);
       setGaleri(response.data);
       console.log(response.data);
     } catch (error) {

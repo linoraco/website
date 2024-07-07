@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const TampilanBeritaOlahragaKadis = () => {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const TampilanBeritaOlahragaKadis = () => {
 
   const getBeritaOlahraga = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/beritaolahraga");
+      const response = await axios.get(`${config.ipPUBLIC}/beritaolahraga`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -27,7 +28,7 @@ const TampilanBeritaOlahragaKadis = () => {
   const getBeritaOlahragaById = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/beritaolahraga/${id}`
+        `${config.ipPUBLIC}/beritaolahraga/${id}`
       );
       setBerita(response.data);
     } catch (error) {

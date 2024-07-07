@@ -5,6 +5,7 @@ import Grup3 from "../../assets/img/Group 3.png";
 import Header from "../Header";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import config from "../../config/config.js";
 
 const AddGaleri = () => {
   const [data, setData] = useState([]);
@@ -13,7 +14,7 @@ const AddGaleri = () => {
 
   const getGaleri = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/galeri");
+      const response = await axios.get(`${config.ipPUBLIC}/galeri`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -23,7 +24,7 @@ const AddGaleri = () => {
 
   const deleteGaleri = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/galeri/${id}`);
+      await axios.delete(`${config.ipPUBLIC}/galeri/${id}`);
       window.location.reload();
     } catch (error) {
       console.log(error);

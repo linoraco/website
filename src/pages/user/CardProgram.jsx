@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import axios from "axios";
+import config from "../../config/config";
 
 const CardProgram = () => {
   const [data, setData] = useState([]);
@@ -11,7 +12,7 @@ const CardProgram = () => {
 
   const getProgram = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/program");
+      const response = await axios.get(`${config.ipPUBLIC}/program`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {

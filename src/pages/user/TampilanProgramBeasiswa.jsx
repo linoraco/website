@@ -6,6 +6,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import ReactWhatsapp from "react-whatsapp";
 import Foto from "../../assets/img/brosurBeasiswa2024.jpg";
+import Config from "../../config/config.js";
 
 const TampilanProgramBeasiswa = () => {
   const [data, setData] = useState([]);
@@ -14,7 +15,7 @@ const TampilanProgramBeasiswa = () => {
 
   const getProgram = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/program");
+      const response = await axios.get(`${Config.ipPUBLIC}/program`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -28,7 +29,7 @@ const TampilanProgramBeasiswa = () => {
 
   const getProgramById = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:4000/program/${id}`);
+      const response = await axios.get(`${Config.ipPUBLIC}/program/${id}`);
       setProgram(response.data);
     } catch (error) {
       console.log(error);

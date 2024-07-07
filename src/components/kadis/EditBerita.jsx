@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import config from "../../config/config.js";
 
 const EditBerita = () => {
   const [judul_berita, setJudulBerita] = useState([]);
@@ -25,7 +26,7 @@ const EditBerita = () => {
 
   const getBeritaById = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:4000/berita/${id}`);
+      const response = await axios.get(`${config.ipPUBLIC}/berita/${id}`);
       setJudulBerita(response.data.judul_berita);
       setNamapembuatberita(response.data.nama_pembuat_berita);
       setIsiBerita(response.data.isi_berita);
@@ -58,7 +59,7 @@ const EditBerita = () => {
     formData.append("tanggal_berita", tanggal_berita);
     formData.append("file", file);
     try {
-      await axios.patch(`http://localhost:4000/berita/${id}`, formData, {
+      await axios.patch(`${config.ipPUBLIC}/berita/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

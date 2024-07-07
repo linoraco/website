@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const FormAddSuratPemuda = () => {
   const [title, setTitle] = useState([]);
@@ -34,7 +35,7 @@ const FormAddSuratPemuda = () => {
     formData.append("tanggal_surat_kadis", tanggal);
 
     try {
-      await axios.post("http://localhost:4000/suratkadis", formData, {
+      await axios.post(`${config.ipPUBLIC}/suratkadis`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

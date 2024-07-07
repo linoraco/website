@@ -4,6 +4,7 @@ import Grup5 from "../../assets/img/Group 5.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const AddBerita = () => {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const AddBerita = () => {
 
   const getBerita = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/berita");
+      const response = await axios.get(`${config.ipPUBLIC}/berita`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -22,7 +23,7 @@ const AddBerita = () => {
 
   const deleteBerita = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:4000/berita/${id}`);
+      const response = await axios.delete(`${config.ipPUBLIC}/berita/${id}`);
       getBerita();
       window.location.reload();
     } catch (error) {

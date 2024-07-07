@@ -6,6 +6,7 @@ import Grup3 from "../../assets/img/Group 3.png";
 import Grup4 from "../../assets/img/Group 4.png";
 import Grup5 from "../../assets/img/Group 5.png";
 import axios from "axios";
+import config from "../../config/config.js";
 
 const AddForumOlahraga = () => {
   const [forums, setForum] = useState([]);
@@ -17,7 +18,7 @@ const AddForumOlahraga = () => {
   const getForumOlahraga = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/forum/kategori/${id}`
+        `${config.ipPUBLIC}/forum/kategori/${id}`
       );
       setForum(response.data);
       console.log(response.data);

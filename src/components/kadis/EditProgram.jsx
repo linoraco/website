@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const EditProgram = () => {
   const [nama_program, setNamaprogram] = useState([]);
@@ -23,7 +24,7 @@ const EditProgram = () => {
 
   const getProgramById = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:4000/program/${id}`);
+      const response = await axios.get(`${config.ipPUBLIC}/program/${id}`);
       setNamaprogram(response.data.nama_program);
       setKontak(response.data.kontak_admin_program);
       setAdmin(response.data.nama_pembuat_program);
@@ -49,7 +50,7 @@ const EditProgram = () => {
     formData.append("kontak_admin_program", kontak_admin_program);
     formData.append("file", file);
     try {
-      await axios.patch(`http://localhost:4000/program/${id}`, formData);
+      await axios.patch(`${config.ipPUBLIC}/program/${id}`, formData);
       navigate("/add-program-kadis");
     } catch (error) {
       console.log(error.message);

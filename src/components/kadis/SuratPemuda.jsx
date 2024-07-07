@@ -7,6 +7,7 @@ import LogoPemkab from "../../assets/img/minsel_300x300.png";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const SuratPemuda = () => {
   const [suratPemuda, setSuratPemuda] = useState([]);
@@ -25,9 +26,7 @@ const SuratPemuda = () => {
 
   const fetchDetailPendaftar = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:4000/suratpemuda/${id}`
-      );
+      const response = await axios.get(`${config.ipPUBLIC}/suratpemuda/${id}`);
       setPendaftar(response.data);
     } catch (error) {
       console.log(error);
@@ -36,7 +35,7 @@ const SuratPemuda = () => {
 
   const getSuratPemuda = async () => {
     const response = await axios.get(
-      `http://localhost:4000/suratpemuda?search_query=${keyword}&page=${page}&limit=${limit}`
+      `${config.ipPUBLIC}/suratpemuda?search_query=${keyword}&page=${page}&limit=${limit}`
     );
     setPage(response.data.page);
     setPages(response.data.totalPage);
@@ -51,7 +50,7 @@ const SuratPemuda = () => {
   const deleteSuratPemuda = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/suratolahraga/${id}`
+        `${config.ipPUBLIC}/suratolahraga/${id}`
       );
       if (response.status === 200) {
         getSuratPemuda();

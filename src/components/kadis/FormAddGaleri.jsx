@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const FormAddGaleri = () => {
   const [file, setFile] = useState("");
@@ -26,7 +27,7 @@ const FormAddGaleri = () => {
     formData.append("file", file);
 
     try {
-      await axios.post("http://localhost:4000/galeri", formData, {
+      await axios.post(`${config.ipPUBLIC}/galeri`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

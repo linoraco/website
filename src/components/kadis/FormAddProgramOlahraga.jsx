@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const FormAddProgramOlahraga = () => {
   const [title, setTitle] = useState([]);
@@ -34,7 +35,7 @@ const FormAddProgramOlahraga = () => {
     formData.append("nama_pembuat_program_olahraga", admin);
     formData.append("kontak_admin_program_olahraga", kontak);
     try {
-      await axios.post("http://localhost:4000/programolahraga", formData, {
+      await axios.post(`${config.ipPUBLIC}/programolahraga`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

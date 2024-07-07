@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import config from "../../config/config.js";
 
 const EditBeritaOlahraga = () => {
   const [judul_berita_olahraga, setJudulBerita] = useState([]);
@@ -23,7 +24,7 @@ const EditBeritaOlahraga = () => {
   const getBeritaOlahragaById = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/beritaolahraga/${id}`
+        `${config.ipPUBLIC}/beritaolahraga/${id}`
       );
       setJudulBerita(response.data.judul_berita_olahraga);
       setNamapembuatberita(response.data.nama_pembuat_berita_olahraga);
@@ -63,15 +64,11 @@ const EditBeritaOlahraga = () => {
     formData.append("tanggal_berita_olahraga", tanggal_berita_olahraga);
     formData.append("file", file);
     try {
-      await axios.patch(
-        `http://localhost:4000/beritaolahraga/${id}`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      await axios.patch(`${config.ipPUBLIC}/beritaolahraga/${id}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       navigate("/add-berita-olahraga-kadis");
     } catch (error) {
       console.log(error);

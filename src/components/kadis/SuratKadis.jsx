@@ -9,6 +9,7 @@ import LogoPemkab from "../../assets/img/minsel_300x300.png";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const SuratKadis = () => {
   const [suratkadis, setSuratkadis] = useState([]);
@@ -27,9 +28,7 @@ const SuratKadis = () => {
 
   const fetchDetailPendaftar = async () => {
     try {
-      const response = await axios.get(
-        `http://localhost:4000/suratkadis/${id}`
-      );
+      const response = await axios.get(`${config.ipPUBLIC}/suratkadis/${id}`);
       setPendaftar(response.data);
     } catch (error) {
       console.log(error);
@@ -38,7 +37,7 @@ const SuratKadis = () => {
 
   const getSuratKadis = async () => {
     const response = await axios.get(
-      `http://localhost:4000/suratkadis?search_query=${keyword}&page=${page}&limit=${limit}`
+      `${config.ipPUBLIC}/suratkadis?search_query=${keyword}&page=${page}&limit=${limit}`
     );
     setPage(response.data.page);
     setPages(response.data.totalPage);
@@ -53,7 +52,7 @@ const SuratKadis = () => {
   const deleteSuratKadis = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/suratkadis/${id}`
+        `${config.ipPUBLIC}/suratkadis/${id}`
       );
       if (response.status === 200) {
         getSuratKadis();

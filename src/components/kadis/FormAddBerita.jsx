@@ -3,6 +3,7 @@ import Header from "../Header";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import config from "../../config/config.js";
 
 const FormAddBerita = () => {
   const [judul_berita, setJudulBerita] = useState([]);
@@ -37,7 +38,7 @@ const FormAddBerita = () => {
     formData.append("tanggal_berita", tanggal_berita);
     formData.append("file", file);
     try {
-      await axios.post("http://localhost:4000/berita", formData, {
+      await axios.post(`${config.ipPUBLIC}/berita`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

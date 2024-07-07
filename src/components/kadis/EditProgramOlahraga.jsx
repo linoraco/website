@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Header from "../Header";
+import config from "../../config/config.js";
 
 const EditProgramOlahraga = () => {
   const [title, setTitle] = useState([]);
@@ -21,7 +22,7 @@ const EditProgramOlahraga = () => {
   const getProgramOlahragaById = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/programolahraga/${id}`
+        `${config.ipPUBLIC}/programolahraga/${id}`
       );
 
       setTitle(response.data.nama_program_olahraga);
@@ -51,15 +52,11 @@ const EditProgramOlahraga = () => {
     formData.append("nama_pembuat_program_olahraga", admin);
     formData.append("kontak_admin_program_olahraga", kontak);
     try {
-      await axios.patch(
-        `http://localhost:4000/programolahraga/${id}`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      await axios.patch(`${config.ipPUBLIC}/programolahraga/${id}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       navigate("/add-program-olahraga-kadis");
     } catch (error) {
       console.log(error.message);
