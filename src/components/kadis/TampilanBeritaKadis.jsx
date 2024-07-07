@@ -70,7 +70,7 @@ const TampilanBeritaKadis = () => {
         </p>
         <img
           className="py-10 rounded-xl min-[319px]:mx-0 "
-          src={`${config.ipPUBLIC}${beritas && beritas.gambar}`}
+          src={`${config.ipPUBLIC}/images/${beritas && beritas.gambar}`}
           alt=""
         />
       </div>

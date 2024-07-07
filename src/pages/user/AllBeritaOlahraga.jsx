@@ -37,7 +37,7 @@ const AllBeritaOlahraga = () => {
               <figure>
                 <img
                   className=""
-                  src={`${config.ipPUBLIC}${item.gambar_berita_olahraga}`}
+                  src={`${config.ipPUBLIC}/images/${item.gambar_berita_olahraga}`}
                   alt="Shoes"
                 />
               </figure>

@@ -66,7 +66,9 @@ const TampilanBeritaOlahraga = () => {
         </p>
         <img
           className="py-10 rounded-lg min-[319px]:mx-0 w-[1250px]"
-          src={`${Config.ipPUBLIC}${beritas && beritas.gambar_berita_olahraga}`}
+          src={`${Config.ipPUBLIC}/images/${
+            beritas && beritas.gambar_berita_olahraga
+          }`}
           alt=""
         />
       </div>

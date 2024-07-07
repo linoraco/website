@@ -276,7 +276,7 @@ const DetailPendaftar = () => {
             KTP <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.gambar_ktp}`}>
+            <Link to={`${config.ipPUBLIC}/images/${pendaftar?.gambar_ktp}`}>
               Lihat KTP
             </Link>
           </button>
@@ -286,7 +286,7 @@ const DetailPendaftar = () => {
             Foto Kopi Kartu Hasil Studi <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.khs}`}>
+            <Link to={`${config.ipPUBLIC}/images/${pendaftar?.khs}`}>
               Lihat Foto Kopi Kartu Hasil Studi
             </Link>
           </button>
@@ -297,7 +297,9 @@ const DetailPendaftar = () => {
             <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.gambar_spbupati}`}>
+            <Link
+              to={`${config.ipPUBLIC}/images/${pendaftar?.gambar_spbupati}`}
+            >
               Lihat Surat Permohonan ke Bupati Minsel
             </Link>
           </button>
@@ -307,7 +309,9 @@ const DetailPendaftar = () => {
             Biodata Pemohon <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.gambar_biodatareg}`}>
+            <Link
+              to={`${config.ipPUBLIC}/images/${pendaftar?.gambar_biodatareg}`}
+            >
               Lihat Biodata Pemohon
             </Link>
           </button>
@@ -317,7 +321,7 @@ const DetailPendaftar = () => {
             Pas Foto Warna 3x4 <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.gambar_pasfoto}`}>
+            <Link to={`${config.ipPUBLIC}/images/${pendaftar?.gambar_pasfoto}`}>
               Lihat Pas Foto
             </Link>
           </button>
@@ -328,7 +332,9 @@ const DetailPendaftar = () => {
             <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.gambar_belumbea}`}>
+            <Link
+              to={`${config.ipPUBLIC}/images/${pendaftar?.gambar_belumbea}`}
+            >
               Lihat Surat Pernyataan Belum Pernah Menerima Beasiswa
             </Link>
           </button>
@@ -339,7 +345,7 @@ const DetailPendaftar = () => {
             <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.gambar_databpp}`}>
+            <Link to={`${config.ipPUBLIC}/images/${pendaftar?.gambar_databpp}`}>
               Lihat Surat Pernyataan Mutlak Penggunaan Data BPP
             </Link>
           </button>
@@ -350,7 +356,9 @@ const DetailPendaftar = () => {
             <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.gambar_ketpimpinan}`}>
+            <Link
+              to={`${config.ipPUBLIC}/images/${pendaftar?.gambar_ketpimpinan}`}
+            >
               Lihat Surat Keterangan dari Pimpinan Fakultas/Prodi/Jurusan
             </Link>
           </button>
@@ -360,7 +368,9 @@ const DetailPendaftar = () => {
             Foto kopi kartu Mahasiswa <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.gambar_kartumahasiswa}`}>
+            <Link
+              to={`${config.ipPUBLIC}/images/${pendaftar?.gambar_kartumahasiswa}`}
+            >
               Lihat Foto kopi kartu Mahasiswa
             </Link>
           </button>
@@ -370,7 +380,7 @@ const DetailPendaftar = () => {
             Foto kopi Kartu Keluarga <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.gambar_kk}`}>
+            <Link to={`${config.ipPUBLIC}/images/${pendaftar?.gambar_kk}`}>
               Lihat Foto kopi Kartu Keluarga
             </Link>
           </button>
@@ -382,7 +392,9 @@ const DetailPendaftar = () => {
             <span className="text-red-600">*</span>
           </h1>
           <button className="bg-red-500 rounded-xl text-sm text-white p-2 sm:text-sm md:text-md lg:text-lg">
-            <Link to={`${config.ipPUBLIC}${pendaftar?.gambar_proposalakhir}`}>
+            <Link
+              to={`${config.ipPUBLIC}/images/${pendaftar?.gambar_proposalakhir}`}
+            >
               Lihat Foto kopi proposal
             </Link>
           </button>

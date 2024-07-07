@@ -91,7 +91,9 @@ const TampilanBeritaOlahragaKadis = () => {
         </p>
         <img
           className="py-10 rounded-lg min-[319px]:mx-0 "
-          src={`${config.ipPUBLIC}${beritas && beritas.gambar_berita_olahraga}`}
+          src={`${config.ipPUBLIC}/images/${
+            beritas && beritas.gambar_berita_olahraga
+          }`}
           alt=""
         />
         <p className="min-[320px]:text-[10px] mx-auto leading-normal  sm:text-sm  md:text-lg   mt-1 text-justify">

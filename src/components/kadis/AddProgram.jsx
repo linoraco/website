@@ -76,7 +76,7 @@ const AddProgram = () => {
             <figure>
               <img
                 className=""
-                src={`${config.ipPUBLIC}${item.gambar}`}
+                src={`${config.ipPUBLIC}/images/${item.gambar}`}
                 alt="Shoes"
               />
             </figure>

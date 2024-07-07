@@ -279,7 +279,7 @@ const HomePage = () => {
                         <div
                           className="absolute inset-0 bg-cover bg-center "
                           style={{
-                            backgroundImage: `url(${Config.ipPUBLIC}${item.gambar})`,
+                            backgroundImage: `url(${`${Config.ipPUBLIC}/images/${item.gambar}`})`,
                           }}
                         />
                         <div className="absolute inset-0 bg-black opacity-10 group-hover:opacity-50 duration-200" />
@@ -306,7 +306,7 @@ const HomePage = () => {
           <div id="slide1" className="carousel-item relative w-full ">
             <Link to={"/all-galeri"} className="w-full">
               <img
-                src={`${Config.ipPUBLIC}${galeris[currentIndex]?.gambar}`}
+                src={`${Config.ipPUBLIC}/images/${galeris[currentIndex]?.gambar}`}
                 alt={`slide-${currentIndex}`}
                 className="relative inset-0 w-full md:h-[600px] bg-cover bg-center duration-300 rounded-xl"
               />
@@ -350,7 +350,7 @@ const HomePage = () => {
                 <figure>
                   <img
                     className="hover:scale-125 duration-300"
-                    src={`${Config.ipPUBLIC}${item.gambar}`}
+                    src={`${Config.ipPUBLIC}/images/${item.gambar}`}
                     alt="Shoes"
                   />
                 </figure>
@@ -394,8 +394,8 @@ const HomePage = () => {
                 <figure>
                   <img
                     className="hover:scale-125 duration-300"
-                    src={`${Config.ipPUBLIC}${
-                      beritas && beritas.gambar_program_olahraga
+                    src={`${Config.ipPUBLIC}/images/${
+                      beritas && beritas.gambar_berita_olahraga
                     }`}
                     alt="Shoes"
                   />
@@ -445,7 +445,7 @@ const HomePage = () => {
                   <figure>
                     <img
                       className="lg:w-[250px] lg:h-[250px] xl:w-[300px] xl:h-[300px] hover:scale-125 duration-300"
-                      src={`${Config.ipPUBLIC}${programs.gambar}`}
+                      src={`${Config.ipPUBLIC}/images/${programs.gambar}`}
                       alt="Album"
                     />
                   </figure>
@@ -481,7 +481,7 @@ const HomePage = () => {
                   <figure>
                     <img
                       className="lg:w-[250px] lg:h-[250px] xl:w-[300px] xl:h-[300px] hover:scale-125 duration-300"
-                      src={`${Config.ipPUBLIC}${programs.gambar_program_olahraga}`}
+                      src={`${Config.ipPUBLIC}/images/${programs.gambar_program_olahraga}`}
                       alt="Album"
                     />
                   </figure>
@@ -533,13 +533,13 @@ const HomePage = () => {
               className="max-w-[60%] md:max-w-[90%] sm:max-w-[90%] min-[380px]:max-w-[90%] lg:max-w-[90%] "
             >
               {galeris.map((galeri) => (
-                <SwiperSlide key={`${Config.ipPUBLIC}${galeri.gambar}`}>
+                <SwiperSlide key={`${Config.ipPUBLIC}/images/${galeri.gambar}`}>
                   <div>
                     <div className="flex flex-col gap-6 mb-20 group relative shadow-lg text-white rounded-xl px-6 py-8 h-[250px] w-[215px] sm:h-[250px] sm:w-[215px] md:h-[270px] md:w-[220px]  lg:h-[340px] lg:w-[290px] xl:h-[400px] xl:w-[350px] overflow-hidden cursor-pointer">
                       <div
                         className="absolute inset-0 bg-cover bg-center hover:scale-125 duration-300"
                         style={{
-                          backgroundImage: `url(${Config.ipPUBLIC}${galeri.gambar})`,
+                          backgroundImage: `url(${`${Config.ipPUBLIC}/images/${galeri.gambar}`})`,
                         }}
                       />
 

@@ -35,7 +35,11 @@ const AllGaleri = () => {
             galeri.map((galeris) => (
               <div className="avatar my-4">
                 <div className="w-[200px]  min-[360px]:w-[250px]   xl:w-[350px]  lg:w-[300px]  md:w-72  sm:w-64 shadow-lg rounded-xl">
-                  <img src={`${config.ipPUBLIC}${galeris && galeris.gambar}`} />
+                  <img
+                    src={`${config.ipPUBLIC}/images/${
+                      galeris && galeris.gambar
+                    }`}
+                  />
                 </div>
               </div>
             ))}

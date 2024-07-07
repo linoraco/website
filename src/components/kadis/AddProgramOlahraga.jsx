@@ -78,7 +78,7 @@ const AddProgramOlahraga = () => {
             <figure>
               <img
                 className=""
-                src={`${config.ipPUBLIC}${item.gambar_program_olahraga}`}
+                src={`${config.ipPUBLIC}/images/${item.gambar_program_olahraga}`}
                 alt="Shoes"
               />
             </figure>
