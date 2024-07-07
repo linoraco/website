@@ -445,7 +445,7 @@ const HomePage = () => {
                   <figure>
                     <img
                       className="lg:w-[250px] lg:h-[250px] xl:w-[300px] xl:h-[300px] hover:scale-125 duration-300"
-                      src={`${Config.ipPUBLIC}/images/${programs.gambar}`}
+                      src={`${Config.ipPUBLIC}/images/${programs.gambar_program}`}
                       alt="Album"
                     />
                   </figure>

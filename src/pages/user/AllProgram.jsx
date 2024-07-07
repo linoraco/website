@@ -39,7 +39,7 @@ const AllProgram = () => {
                 <figure>
                   <img
                     className=""
-                    src={`${config.ipPUBLIC}/images/${item.gambar}`}
+                    src={`${config.ipPUBLIC}/images/${item.gambar_program}`}
                     alt="Shoes"
                   />
                 </figure>
