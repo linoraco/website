@@ -39,7 +39,7 @@ const TampilanBeritaOlahragaKadis = () => {
   const deleteBeritaOlahraga = async (id) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/beritaolahraga/${id}`
+        `${config.ipPUBLIC}/beritaolahraga/${id}`
       );
       getBeritaOlahragaById();
       navigate("/add-berita-olahraga-kadis");
@@ -91,7 +91,7 @@ const TampilanBeritaOlahragaKadis = () => {
         </p>
         <img
           className="py-10 rounded-lg min-[319px]:mx-0 "
-          src={beritas && beritas.URL}
+          src={`${config.ipPUBLIC}${beritas && beritas.gambar_berita_olahraga}`}
           alt=""
         />
         <p className="min-[320px]:text-[10px] mx-auto leading-normal  sm:text-sm  md:text-lg   mt-1 text-justify">

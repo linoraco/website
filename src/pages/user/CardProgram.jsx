@@ -53,7 +53,7 @@ const CardProgram = () => {
           {data.map((item) => (
             <div className="card card-side bg-base-100 shadow-xl mx-14 h-60 w-[500px]">
               <figure>
-                <img src={item.URL} alt="Movie" />
+                <img src={`${config.ipPUBLIC}${item.gambar}`} alt="Movie" />
               </figure>
               <div className="card-body">
                 <h2 className="card-title">{item.nama_program}</h2>

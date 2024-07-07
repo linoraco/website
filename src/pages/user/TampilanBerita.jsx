@@ -4,6 +4,7 @@ import Footer from "../../components/Footer";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import Beritapemuda from "../../helper/beritapemuda.json";
+import Config from "../../config/config";
 
 const TampilanBerita = () => {
   const [data, setData] = useState([]);
@@ -12,7 +13,7 @@ const TampilanBerita = () => {
 
   const getBerita = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/berita");
+      const response = await axios.get(`${Config.ipPUBLIC}/berita`);
       setData(response.data);
       console.log(response.data);
     } catch (error) {
@@ -26,7 +27,7 @@ const TampilanBerita = () => {
 
   const getBeritaById = async (id) => {
     try {
-      const response = await axios.get(`http://localhost:4000/berita/${id}`);
+      const response = await axios.get(`${Config.ipPUBLIC}/berita/${id}`);
       setBerita(response.data);
     } catch (error) {
       console.log(error);
@@ -62,7 +63,7 @@ const TampilanBerita = () => {
         </p>
         <img
           className="py-10 rounded-xl min-[319px]:mx-0 w-[1250px] "
-          src={beritas && beritas.URL}
+          src={`${Config.ipPUBLIC}${beritas && beritas.gambar}`}
           alt=""
         />
       </div>

@@ -68,7 +68,9 @@ const TampilanProgramOlahraga = () => {
       <div className=" flex justify-center items-center mx-0 min-[320px]:mx-[10%] sm:mx-[10%]  md:mx-[15%] lg:mx-[20%] xl:mx-[20%]">
         <img
           className="  py-10 rounded-xl "
-          src={program && program.URL}
+          src={`${Config.ipPUBLIC}${
+            program && program.gambar_program_olahraga
+          }`}
           alt=""
         />
       </div>
