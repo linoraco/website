@@ -3,15 +3,14 @@ import Navbar from "../../components/ComponenRespon/Navbar";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import Bgdispora from "../../assets/img/bgdisporanewjpg.jpg";
-import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
+// import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
+import g from "../../assets/files/RKT DISPORA 2023.pdf";
 
 const Dokumen = () => {
-  // const docs = [
-  //   { uri: "https://url-to-my-pdf.pdf" },
-  //   { uri: require("./example-files/pdf.pdf") }, // Local File
-  // ];
+  const docs = [{ uri: g }]; // Local File
+
   return (
-    <div className="flex-col ">
+    <div className="flex-col">
       {/* <!-- navbar --> */}
       <Navbar />
       {/* <!-- navbar end --> */}
@@ -30,72 +29,77 @@ const Dokumen = () => {
 
       <br />
       <br />
-      {/* <!-- content -->
-  <!-- link renstra --> */}
+      {/* <!-- content --> */}
       <div className="flex">
-        <button className="flex flex-col">
-          <Link
-            className="text-sm  sm:text-lg  lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to={"/"}
+        <div className="flex flex-col">
+          <a
+            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
+            href={g}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             PRODUK HUKUM
-          </Link>
+          </a>
           <Link
-            className="text-sm  sm:text-lg  lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to={"/"}
+            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
+            to="/"
           >
             RENSTRA
           </Link>
           <Link
-            className="text-sm  sm:text-lg  lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to={"/"}
+            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
+            to="/"
           >
             RENJA
           </Link>
-          <Link
-            className="text-sm  sm:text-lg  lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to={"/dokumen/rkt"}
+          <a
+            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
           >
             RKT
-          </Link>
+          </a>
           <Link
-            className="text-sm  sm:text-lg  lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to={"/"}
+            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
+            to="/"
           >
             RINGKASAN DPA
           </Link>
           <Link
-            className="text-sm  sm:text-lg  lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to={"/"}
+            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
+            to="/"
           >
             PERJANJIAN KINERJA
           </Link>
           <Link
-            className="text-sm  sm:text-lg  lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to={"/"}
+            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
+            to="/"
           >
             LAKIP/SAKIP
           </Link>
           <Link
-            className="text-sm  sm:text-lg  lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to={"/"}
+            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
+            to=""
           >
             LPPD
           </Link>
           <Link
-            className="text-sm  sm:text-lg  lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to={"/"}
+            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
+            to="/"
           >
             RENCANA AKSI
           </Link>
           <Link
-            className="text-sm  sm:text-lg  lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to={"/"}
+            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
+            to="/"
           >
             LAPORAN KINERJA (BERKALAH)
           </Link>
-        </button>
-        <div className="">{/* <DocViewer documents={docs} /> */}</div>
+        </div>
+        {/* <div className="flex-grow">
+          <DocViewer documents={docs} pluginRenderers={DocViewerRenderers} />
+        </div> */}
       </div>
       {/* <!-- content end --> */}
 

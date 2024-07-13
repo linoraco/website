@@ -1,29 +1,19 @@
-import React, { useRef, useState, useEffect, useCallback } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer";
 import axios from "axios";
-import fotokadis from "../../assets/img/kadis.png";
-import bupati from "../../assets/img/bupati.png";
-import KetuaKoni from "../../assets/img/newKoni.png";
-import Bgdispora from "../../assets/img/foto10.jpeg";
-
-// data dummy
-// import Beritapemuda from "../../helper/beritapemuda.json";
-// import Beritaolahraga from "../../helper/beritaolahraga.json";
-// import galeri from "../../helper/galeri.json";
-// import Program from "../../helper/program.json";
-// import Programolahraga from "../../helper/programolahraga.json";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
-
 import { FreeMode, Pagination } from "swiper/modules";
-
 import { RxArrowTopRight } from "react-icons/rx";
 import NavbarHome from "../../components/ComponenRespon/NavbarHome";
 import Config from "../../config/config.js";
+import Footer from "../../components/Footer";
+import fotokadis from "../../assets/img/kadis.png";
+import bupati from "../../assets/img/bupati.png";
+import KetuaKoni from "../../assets/img/newKoni.png";
+import Bgdispora from "../../assets/img/foto10.jpeg";
 
 const HomePage = () => {
   const [data, setData] = useState([]);
@@ -32,10 +22,6 @@ const HomePage = () => {
   const [programOlahraga, setProgramOlahraga] = useState([]);
   const [galeris, setGaleri] = useState([]);
   const section1 = useRef();
-  const section2 = useRef();
-  const section3 = useRef();
-  const section4 = useRef();
-  const section5 = useRef();
   const [isHovered, setHovered] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [days, setDays] = useState(15);
@@ -50,18 +36,11 @@ const HomePage = () => {
     setCurrentTime(formattedTime);
   };
 
-  // Fungsi untuk mengupdate nilai countdown
+  // Function to update countdown values
   const updateCountdown = () => {
-    // Get the current date and time
     const now = new Date().getTime();
-
-    // Set the date and time of the countdown
     const countdownDate = new Date("2023-12-31T23:59:59").getTime();
-
-    // Calculate the time remaining
     const timeRemaining = countdownDate - now;
-
-    // Calculate days, hours, minutes, and seconds
     const newDays = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
     const newHours = Math.floor(
       (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -70,8 +49,6 @@ const HomePage = () => {
       (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
     );
     const newSeconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
-
-    // Update the state with the new values
     setDays(newDays);
     setHours(newHours);
     setMinutes(newMinutes);
@@ -85,19 +62,12 @@ const HomePage = () => {
       (prevIndex) => (prevIndex - 1 + galeris.length) % galeris.length
     );
 
-  // useEffect(() => {
-  //   const autoSlideInterval = setInterval(goToNextSlide, 5000); // Auto slide every 5 seconds
-
-  //   return () => clearInterval(autoSlideInterval);
-  // }, []); // Run only once when the component is mounted
-
   const getBerita = async () => {
     try {
       const response = await axios.get(`${Config.ipPUBLIC}/berita`);
       setData(response.data);
-      console.log(response.data);
     } catch (error) {
-      console.log(error.data);
+      console.log(error);
     }
   };
 
@@ -105,9 +75,8 @@ const HomePage = () => {
     try {
       const response = await axios.get(`${Config.ipPUBLIC}/beritaolahraga`);
       setDataOlahraga(response.data);
-      console.log(response.data);
     } catch (error) {
-      console.log(error.data);
+      console.log(error);
     }
   };
 
@@ -115,9 +84,8 @@ const HomePage = () => {
     try {
       const response = await axios.get(`${Config.ipPUBLIC}/program`);
       setProgram(response.data);
-      console.log(response.program);
     } catch (error) {
-      console.log(error.program);
+      console.log(error);
     }
   };
 
@@ -125,9 +93,8 @@ const HomePage = () => {
     try {
       const response = await axios.get(`${Config.ipPUBLIC}/programolahraga`);
       setProgramOlahraga(response.data);
-      console.log(response.program);
     } catch (error) {
-      console.log(error.program);
+      console.log(error);
     }
   };
 
@@ -135,14 +102,12 @@ const HomePage = () => {
     try {
       const response = await axios.get(`${Config.ipPUBLIC}/galeri`);
       setGaleri(response.data);
-      console.log(response.data);
     } catch (error) {
-      console.log(error.galeri);
+      console.log(error);
     }
   };
 
   const scrollHandler = (elmRef) => {
-    console.log(elmRef);
     window.scrollTo({ top: elmRef.current.offsetTop, behavior: "smooth" });
   };
 
@@ -156,21 +121,14 @@ const HomePage = () => {
 
   useEffect(() => {
     const countdownInterval = setInterval(updateCountdown, 1000);
-
-    // Membersihkan interval setelah komponen di-unmount
     return () => clearInterval(countdownInterval);
   }, []);
 
   useEffect(() => {
-    // Panggil getCurrentTime saat komponen pertama kali dimuat
     getCurrentTime();
-
-    // Atur interval untuk memperbarui waktu setiap detik
     const intervalId = setInterval(getCurrentTime, 1000);
-    // Bersihkan interval saat komponen akan dibongkar
     return () => clearInterval(intervalId);
-  }, []); // Penambahan dependensi kosong agar useEffect hanya dipanggil sekali
-
+  }, []);
   return (
     <div
       style={{ backgroundImage: `url(${Bgdispora})` }}
@@ -236,7 +194,7 @@ const HomePage = () => {
               </div>
             </div>
             <div
-              ref={section1}
+              // ref={section1}
               className=" font-semibold font-mono mr-11 mt-11"
             >
               <div className="grid grid-flow-col gap-1 text-center auto-cols-max justify-end mr-5 mt-5">
@@ -334,7 +292,7 @@ const HomePage = () => {
         <br />
         {/* <!-- Berita & Pengumuman Kepemudaan --> */}
         <div className="p-5 bg-red-600/50 rounded-xl lg:mx-10 ">
-          <div className=" pt-7" ref={section2}>
+          <div className=" pt-7">
             <p className="font-semibold text-center text-sm min-[450px]:text-[15px] sm:text-lg md:text-xl lg:text-2xl  text-white mt-11">
               Berita & Pengumuman Bidang Kepemudaan
             </p>
@@ -377,7 +335,7 @@ const HomePage = () => {
         {/* <!-- Berita & Pengumuman Kepemudaan end --> */}
         {/* <!-- Berita & Pengumuman Olahraga --> */}
         <div className="p-5  bg-red-600/50 rounded-xl mt-10 lg:mx-10">
-          <div className=" pt-7" ref={section2}>
+          <div className=" pt-7">
             <p className="font-semibold text-center text-sm min-[450px]:text-[15px] sm:text-lg md:text-xl lg:text-2xl text-white ">
               Berita & Pengumuman Bidang Olahraga
             </p>
@@ -427,7 +385,7 @@ const HomePage = () => {
         <div className="flex justify-center mt-11">
           <p className="text-xl text-white font-bold">PROGRAM DINAS</p>
         </div>
-        <div ref={section3} className="flex-col mt-20 lg:mx-10">
+        <div className="flex-col mt-20 lg:mx-10">
           {/* Program Pemuda */}
           <div className="flex-col items-start bg-red-600/50 py-10 rounded-xl ">
             <div>
@@ -508,7 +466,7 @@ const HomePage = () => {
 
         {/* <!-- Galeri start --> */}
         <div className="bg-red-600/50 py-10 rounded-xl mt-20 lg:mx-10">
-          <div ref={section4}>
+          <div>
             <h1 className="text-3xl max-md:text-xl ml-24 font-semibold text-white">
               Galeri
             </h1>

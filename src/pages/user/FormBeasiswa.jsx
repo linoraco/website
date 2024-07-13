@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Dispora1 from "../../assets/img/Dispora 1.png";
 import axios from "axios";
-import config from "../../config/config";
+import config from "../../config/config.js";
 
 const FormBeasiswa = () => {
-  // const { id } = useParams();
   const [namareg, setNamareg] = useState("");
   const [umurreg, setUmur] = useState("");
   const [ttl, setTtl] = useState("");
@@ -97,12 +96,12 @@ const FormBeasiswa = () => {
     formData.append("gambar_kartumahasiswa", fotokopimaha);
     formData.append("gambar_kk", fotokopikk);
     formData.append("gambar_proposalakhir", fotokopipropo);
+
     try {
       const response = await axios.post(
-        `${config.ipPUBLIC}/regprogram`,
+        "http://217.15.171.240:4000/regprogram",
         formData
       );
-      //  navigate("/panduan");
       if (response) {
         console.log("Berhasil");
         window.location.reload();
@@ -113,8 +112,7 @@ const FormBeasiswa = () => {
   };
 
   return (
-    <div className="flex-col ">
-      {/* <!-- navbar --> */}
+    <div className="flex-col">
       <div className="navbar xl:h-[90px] border-b border-red-800">
         <div className="flex justify-center">
           <img
@@ -124,25 +122,22 @@ const FormBeasiswa = () => {
           />
         </div>
       </div>
-      {/* <!-- navbar end --> */}
 
-      {/* <!-- Content --> */}
       <Link
         to={"/"}
         className="flex items-start justify-center bg-red-500 w-[80px] p-3 rounded-br-xl"
       >
         Beranda
       </Link>
+
       <div className="flex justify-center items-center">
-        <h1 className="text-lg mt-20 sm:text-xl md:text-2xl  lg:text-3xl text-center">
+        <h1 className="text-lg mt-20 sm:text-xl md:text-2xl lg:text-3xl text-center">
           Form Program Beasiswa
         </h1>
       </div>
 
       <hr className="mx-20 mt-10" />
-      <br />
 
-      {/* <!-- Form --> */}
       <form
         onSubmit={saveRegprogram}
         className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 mx-[10%] sm:mx-[10%] md:mx-[8%] lg:mx-[15%] xl:mx-[20%] py-5"
@@ -154,10 +149,8 @@ const FormBeasiswa = () => {
           <input
             value={namareg}
             onChange={(e) => setNamareg(e.target.value)}
-            className=" w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             type="text"
-            name=""
-            id=""
           />
         </div>
 
@@ -170,10 +163,9 @@ const FormBeasiswa = () => {
             onChange={(e) => setUmur(e.target.value)}
             className="w-[80px] min-[360px]:w-[80px] min-[480px]:h-[30px] sm:w-[100px] sm:h-[35px] md:w-[100px] lg:w-[100px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             type="text"
-            name=""
-            id=""
           />
         </div>
+
         <div className="my-6">
           <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
             Tempat Tanggal Lahir <span className="text-red-600">*</span>
@@ -181,24 +173,115 @@ const FormBeasiswa = () => {
           <input
             value={ttl}
             onChange={(e) => setTtl(e.target.value)}
-            className=" w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            type="text"
+          />
+        </div>
+
+        <div className="my-6">
+          <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
+            No Telepon <span className="text-red-600">*</span>
+          </h1>
+          <input
+            value={notelepon}
+            onChange={(e) => setNotelepon(e.target.value)}
+            className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            type="text"
+          />
+        </div>
+
+        <div className="my-6">
+          <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
+            NIM <span className="text-red-600">*</span>
+          </h1>
+          <input
+            value={nim}
+            onChange={(e) => setNim(e.target.value)}
+            className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            type="text"
+          />
+        </div>
+
+        <div className="my-6">
+          <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
+            IPK <span className="text-red-600">*</span>
+          </h1>
+          <input
+            value={ipk}
+            onChange={(e) => setIpk(e.target.value)}
+            className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            type="text"
+          />
+        </div>
+
+        <div className="my-6">
+          <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
+            NIK <span className="text-red-600">*</span>
+          </h1>
+          <input
+            value={nik}
+            onChange={(e) => setNik(e.target.value)}
+            className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            type="text"
+          />
+        </div>
+
+        <div className="my-6">
+          <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
+            Alamat Lengkap <span className="text-red-600">*</span>
+          </h1>
+          <textarea
+            value={alamat}
+            onChange={(e) => setAlamat(e.target.value)}
+            className=" w-[250px] min-[360px]:w-[300px] min-[480px]:h-[70px] sm:w-[350px] sm:h-[75px] md:w-[300px] lg:w-[350px] p-2 leading-5 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             type="text"
             name=""
             id=""
           />
         </div>
+
+        <div className="my-6 flex flex-col">
+          <label
+            className=" py-1 text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]"
+            htmlFor=""
+          >
+            Kecamatan <span className="text-red-600">*</span>
+          </label>
+          <select
+            className="bg-red-500 text-white p-1 w-[190px] min-[360px]:w-[90px] min-[480px]:h-[30px] sm:w-[100px] sm:h-[35px] md:w-[100px] lg:w-[100px]  text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            name=""
+            value={kecamatan}
+            onChange={(e) => setKecamatan(e.target.value)}
+            id=""
+          >
+            <option>Pilih Kecamatan</option>
+            <option value="mondoinding">Mondoinding</option>
+            <option value="tompasobaru">Tompaso Baru</option>
+            <option value="ranoyapo">Ranoyapo</option>
+            <option value="motoling">Motoling</option>
+            <option value="kumelembuai">Kumelembuai</option>
+            <option value="motolingbarat">Motoling Barat</option>
+            <option value="motolingtimur">Motoling Timur</option>
+            <option value="sinonsayang">Sinonsayang</option>
+            <option value="amurang">Amurang</option>
+            <option value="amurangbarat">Amurang Barat</option>
+            <option value="amurangtimur">Amurang Timur</option>
+            <option value="tareran">Tareran</option>
+            <option value="suluuntareran">Suluun Tareran</option>
+            <option value="tumpaan">Tumpaan</option>
+            <option value="tatapaan">Tatapaan</option>
+          </select>
+        </div>
+
         <div className="my-6">
           <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
-            No.telepon yang bisa dihubungi{" "}
-            <span className="text-red-600">*</span>
+            Desa <span className="text-red-600">*</span>
           </h1>
           <input
-            value={notelepon}
-            onChange={(e) => setNotelepon(e.target.value)}
-            className="w-[150px] min-[360px]:w-[150px] min-[480px]:h-[30px] sm:w-[150px] sm:h-[35px] md:w-[150px] lg:w-[150px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            value={desa}
+            onChange={(e) => setDesa(e.target.value)}
+            className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             type="text"
-            name=""
-            id=""
           />
         </div>
 
@@ -209,10 +292,8 @@ const FormBeasiswa = () => {
           <input
             value={universitas}
             onChange={(e) => setUniversitas(e.target.value)}
-            className=" w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             type="text"
-            name=""
-            id=""
           />
         </div>
 
@@ -223,12 +304,11 @@ const FormBeasiswa = () => {
           <input
             value={fakultas}
             onChange={(e) => setFakultas(e.target.value)}
-            className=" w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             type="text"
-            name=""
-            id=""
           />
         </div>
+
         <div className="my-6">
           <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
             Jurusan <span className="text-red-600">*</span>
@@ -236,52 +316,8 @@ const FormBeasiswa = () => {
           <input
             value={jurusan}
             onChange={(e) => setJurusan(e.target.value)}
-            className=" w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
+            className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             type="text"
-            name=""
-            id=""
-          />
-        </div>
-
-        <div className="my-6">
-          <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
-            NIM (Nomor Induk Mahasiswa) <span className="text-red-600">*</span>
-          </h1>
-          <input
-            value={nim}
-            onChange={(e) => setNim(e.target.value)}
-            className="w-[160px] min-[360px]:w-[160px] min-[480px]:h-[30px] sm:w-[160px] sm:h-[35px] md:w-[160px] lg:w-[160px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
-            type="text"
-            name=""
-            id=""
-          />
-        </div>
-        <div className="my-6">
-          <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
-            NIK (Nomor Induk Kependudukkan){" "}
-            <span className="text-red-600">*</span>
-          </h1>
-          <input
-            value={nik}
-            onChange={(e) => setNik(e.target.value)}
-            className="w-[160px] min-[360px]:w-[160px] min-[480px]:h-[30px] sm:w-[160px] sm:h-[35px] md:w-[160px] lg:w-[160px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
-            type="text"
-            name=""
-            id=""
-          />
-        </div>
-        <div className="my-6">
-          <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
-            IPK (Indeks Prestasi Kumulatif){" "}
-            <span className="text-red-600">*</span>
-          </h1>
-          <input
-            value={ipk}
-            onChange={(e) => setIpk(e.target.value)}
-            className="w-[80px] min-[360px]:w-[80px] min-[480px]:h-[30px] sm:w-[100px] sm:h-[35px] md:w-[100px] lg:w-[100px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
-            type="text"
-            name=""
-            id=""
           />
         </div>
 
@@ -320,67 +356,6 @@ const FormBeasiswa = () => {
             <option value="sudah">Sudah</option>
             <option value="belum">Belum</option>
           </select>
-        </div>
-
-        <div className="my-6">
-          <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
-            Alamat Lengkap <span className="text-red-600">*</span>
-          </h1>
-          <textarea
-            value={alamat}
-            onChange={(e) => setAlamat(e.target.value)}
-            className=" w-[250px] min-[360px]:w-[300px] min-[480px]:h-[70px] sm:w-[350px] sm:h-[75px] md:w-[300px] lg:w-[350px] p-2 leading-5 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
-            type="text"
-            name=""
-            id=""
-          />
-        </div>
-
-        <div className="my-6 flex flex-col">
-          <label
-            className=" py-1 text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]"
-            htmlFor=""
-          >
-            Kecamatan <span className="text-red-600">*</span>
-          </label>
-          <select
-            className="bg-red-500 text-white p-1 w-[90px] min-[360px]:w-[90px] min-[480px]:h-[30px] sm:w-[100px] sm:h-[35px] md:w-[100px] lg:w-[100px]  text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
-            name=""
-            value={kecamatan}
-            onChange={(e) => setKecamatan(e.target.value)}
-            id=""
-          >
-            <option>Pilih Kecamatan</option>
-            <option value="mondoinding">Mondoinding</option>
-            <option value="tompasobaru">Tompaso Baru</option>
-            <option value="ranoyapo">Ranoyapo</option>
-            <option value="motoling">Motoling</option>
-            <option value="kumelembuai">Kumelembuai</option>
-            <option value="motolingbarat">Motoling Barat</option>
-            <option value="motolingtimur">Motoling Timur</option>
-            <option value="sinonsayang">Sinonsayang</option>
-            <option value="amurang">Amurang</option>
-            <option value="amurangbarat">Amurang Barat</option>
-            <option value="amurangtimur">Amurang Timur</option>
-            <option value="tareran">Tareran</option>
-            <option value="suluuntareran">Suluun Tareran</option>
-            <option value="tumpaan">Tumpaan</option>
-            <option value="tatapaan">Tatapaan</option>
-          </select>
-        </div>
-
-        <div className="my-6 flex flex-col">
-          <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
-            Nama Desa <span className="text-red-600">*</span>
-          </h1>
-          <input
-            value={desa}
-            onChange={(e) => setDesa(e.target.value)}
-            className=" w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
-            type="text"
-            name=""
-            id=""
-          />
         </div>
 
         <div className="my-6 flex flex-col">
@@ -449,6 +424,7 @@ const FormBeasiswa = () => {
             <option value="sem10">Semester 10</option>
           </select>
         </div>
+
         <div className="my-6 flex flex-col">
           <label
             className="py-1 text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]"
@@ -470,6 +446,7 @@ const FormBeasiswa = () => {
             <option value="sem6">Semester 6</option>
           </select>
         </div>
+        {/* File Uploads */}
 
         <div className="my-6">
           <h1 className="text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
@@ -631,20 +608,16 @@ const FormBeasiswa = () => {
             id="fotokopipropo"
           />{" "}
         </div>
-        <div className="flex justify-center items-center">
-          <button
-            type="submit"
-            className="flex items-center bg-white hover:bg-red-600 h-12 w-56 border-2 border-red-900 rounded-xl justify-center"
-          >
-            SIMPAN
-          </button>
-        </div>
-      </form>
 
-      <br />
-      {/* <!-- footer --> */}
-      {/* <Footer /> */}
-      {/* <!-- footer end --> */}
+        {/* Submission Button */}
+
+        <button
+          type="submit"
+          className="flex items-center bg-white hover:bg-red-600 h-12 w-56 border-2 border-red-900 rounded-xl justify-center"
+        >
+          SIMPAN
+        </button>
+      </form>
     </div>
   );
 };
