@@ -33,7 +33,7 @@ const AllGaleri = () => {
           <div key={galeriItem.id} className="avatar my-4">
             <div className="w-[200px] min-[360px]:w-[250px] xl:w-[350px] lg:w-[300px] md:w-72 sm:w-64 shadow-lg rounded-xl">
               <img
-                src={`${config.ipPUBLIC}/images/${galeriItem.gambar}`}
+                src={`${config.ipPUBLIC}/galeri/${galeriItem.gambar}`}
                 alt={galeriItem.judul}
                 className="w-full h-full object-cover"
               />

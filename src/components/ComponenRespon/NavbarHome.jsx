@@ -13,7 +13,7 @@ const NavbarHome = () => {
   return (
     <>
       {/* <!-- navbar --> */}
-      <div className="navbar bg-white px-8 border-b-2   border-red-800">
+      <div className="navbar bg-white lg:px-[5%] min-[1500px]:px-[10%] border-b-2    border-red-800">
         <div className="navbar-start">
           <div className="dropdown">
             <div
