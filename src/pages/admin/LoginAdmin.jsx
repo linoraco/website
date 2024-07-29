@@ -34,7 +34,7 @@ const LoginAdmin = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(http://217.15.171.240:4000/galeri/7a4aafc374cbce846c52995b6cfeac62.jpeg)`,
+        backgroundImage: `url(http://localhost:4000/galeri/7a4aafc374cbce846c52995b6cfeac62.jpeg)`,
       }}
       className="w-full h-screen font-sans bg-no-repeat"
     >

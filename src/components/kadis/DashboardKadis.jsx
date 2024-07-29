@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header";
 
-import Copyofdispora from "../../assets/img/Copy of Dispora (1) 1.png";
 import BgAdmin from "../../assets/img/bgnew.jpg";
 import BeritaLogo from "../../assets/img/newspaper.png";
 import ProgramLogo from "../../assets/img/checklist.png";
