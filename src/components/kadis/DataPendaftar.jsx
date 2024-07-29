@@ -10,7 +10,7 @@ import config from "../../config/config.js";
 const DataPendaftar = () => {
   const [pendaftar, setPendaftar] = useState([]);
   const [page, setPage] = useState(0);
-  const limit = 18;
+  const limit = 10;
   let number = 10;
   const [pages, setPages] = useState(0);
   const [rows, setRows] = useState(0);
