@@ -13,7 +13,7 @@ export const loginUser = createAsyncThunk(
   "user/loginUser",
   async (user, thunkAPI) => {
     try {
-      const response = await axios.post("http://217.15.171.240:4000/login", {
+      const response = await axios.post("http://localhost:4000/login", {
         email: user.email,
         password: user.password,
       });
@@ -28,10 +28,12 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
+export const getMe = createAsyncThunk("user/getMe", async (user, thunkAPI) => {
   try {
-    const response = await axios.get("http://217.15.171.240:4000/me");
-
+    const response = await axios.get("http://localhost:4000/me", {
+      email: user.email,
+      password: user.password,
+    });
     return response.data;
   } catch (error) {
     if (error.response) {
@@ -42,7 +44,7 @@ export const getMe = createAsyncThunk("user/getMe", async (_, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/LogOut", async () => {
-  await axios.delete("http://217.15.171.240:4000/logout");
+  await axios.delete("http://localhost:4000/logout");
 });
 
 export const authSlice = createSlice({

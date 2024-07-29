@@ -17,10 +17,10 @@ const LoginAdmin = () => {
           navigate("/home-admin-kadis");
           break;
         case "2":
-          navigate("/home-admin-pemuda");
+          navigate("/home-admin-kadis");
           break;
         default:
-          navigate("/home-admin-olahraga");
+          navigate("/home-admin-kadis");
       }
     }
     dispatch(reset());
