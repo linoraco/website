@@ -45,7 +45,7 @@ const NavbarHome = () => {
                 <li className="text-[14px]  lg:text-md xl:text-lg font-semibold">
                   <details>
                     <summary>PROFIL DINAS</summary>
-                    <ul className="p-2 bg-red-500/60 text-sm">
+                    <ul className="p-2 bg-red-500 text-sm rounded-md">
                       <li className="hover:bg-white duration-300 rounded-md">
                         <Link to={"/sejarah-dinas"}>SEJARAH DINAS</Link>
                       </li>

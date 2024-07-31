@@ -78,17 +78,17 @@ const TampilanProgramBeasiswa = () => {
         <div className="px-4">
           <Link
             to={"/form-beasiswa"}
-            className="bg-[#D9D9D9] text-xs sm:text-[16px] sm:p-2 min-[768px]:p-3 mt-1 p-1 rounded-xl"
+            className="bg-[#D9D9D9] text-xs sm:text-[16px] hover:bg-green-400 hover:-translate-y-1 duration-300 sm:p-2 min-[768px]:p-3 mt-1 p-1 rounded-xl"
           >
             Daftar Sekarang
           </Link>
         </div>
         <div className="px-4">
           <ReactWhatsapp
-            number="+62 82348135155"
-            className="bg-[#D9D9D9] text-xs sm:text-[16px] sm:p-2 min-[768px]:p-3 mt-1 p-1 rounded-xl"
+            number="+62 82188884401"
+            className="bg-[#D9D9D9] text-xs sm:text-[16px] hover:bg-green-400 hover:-translate-y-1 duration-300 sm:p-2 min-[768px]:p-3 mt-1 p-1 rounded-xl"
           >
-            Kontak Kami
+            Kontak Admin (Marchel)
           </ReactWhatsapp>
         </div>
       </div>

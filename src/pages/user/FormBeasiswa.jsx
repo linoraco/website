@@ -100,10 +100,6 @@ const FormBeasiswa = () => {
       "jurusan",
       "wisuda",
       "yudisium",
-      "semester_s1",
-      "semester_s2",
-      "semester_s3",
-      "semester_diploma",
     ];
 
     const requiredFiles = [
@@ -118,6 +114,13 @@ const FormBeasiswa = () => {
       "gambar_kartumahasiswa",
       "gambar_kk",
       "gambar_proposalakhir",
+    ];
+
+    const semesterFields = [
+      "semester_s1",
+      "semester_s2",
+      "semester_s3",
+      "semester_diploma",
     ];
 
     const emptyFields = requiredFields.filter((field) => !formData[field]);
@@ -136,8 +139,15 @@ const FormBeasiswa = () => {
     });
 
     if (missingFields.length > 0) {
-      alert(`Harap isi data berikut: ${missingFields.join(", ")}`);
+      alert(`Harap isi data berikut : ${missingFields.join(", ")}`);
       return;
+    }
+
+    for (const fileField of requiredFiles) {
+      if (formData[fileField] && formData[fileField].size > 5242880) {
+        alert(`File ${fieldLabels[fileField]} melebihi ukuran maksimal 5MB.`);
+        return;
+      }
     }
 
     const submissionData = new FormData();
@@ -148,14 +158,20 @@ const FormBeasiswa = () => {
     try {
       const response = await axios.post(
         `${config.ipPUBLIC}/regprogram`,
-        submissionData
+        submissionData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
       );
       if (response) {
         setShowModal(true);
         setTimeout(() => window.location.reload(), 2000); // Refresh after 2 seconds
       }
     } catch (error) {
-      console.log(error);
+      console.error("Upload error: ", error.response || error);
+      alert("Failed to upload data. Please try again.");
     }
   };
 
@@ -288,7 +304,8 @@ const FormBeasiswa = () => {
         {[{ label: "S1", name: "semester_s1" }].map((field) => (
           <div key={field.name} className="my-6 flex flex-col">
             <label className="py-1 text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
-              semester {field.label} <span className="text-red-600">*</span>
+              semester {field.label}{" "}
+              <span className="text-red-600">* optional</span>
             </label>
             <select
               name={field.name}
@@ -296,6 +313,9 @@ const FormBeasiswa = () => {
               onChange={handleChange}
               className="bg-red-500 text-white p-1 w-[90px] min-[360px]:w-[90px] min-[480px]:h-[30px] sm:w-[100px] sm:h-[35px] md:w-[100px] lg:w-[150px] text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             >
+              <option className="disabled" value="pilihsemester">
+                pilih semester
+              </option>
               <option value="semester6">semester 6</option>
               <option value="semester8">semester 8</option>
               <option value="semester10">semester 10</option>
@@ -306,7 +326,8 @@ const FormBeasiswa = () => {
         {[{ label: "S2", name: "semester_s2" }].map((field) => (
           <div key={field.name} className="my-6 flex flex-col">
             <label className="py-1 text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
-              semester {field.label} <span className="text-red-600">*</span>
+              semester {field.label}{" "}
+              <span className="text-red-600">* optional</span>
             </label>
             <select
               name={field.name}
@@ -314,16 +335,20 @@ const FormBeasiswa = () => {
               onChange={handleChange}
               className="bg-red-500 text-white p-1 w-[90px] min-[360px]:w-[90px] min-[480px]:h-[30px] sm:w-[100px] sm:h-[35px] md:w-[100px] lg:w-[150px] text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             >
+              <option className="disabled" value="pilihsemester">
+                pilih semester
+              </option>
               <option value="semester4">semester 4</option>
               <option value="semester6">semester 6</option>
             </select>
           </div>
         ))}
 
-        {[{ label: "S2", name: "semester_s3" }].map((field) => (
+        {[{ label: "S3", name: "semester_s3" }].map((field) => (
           <div key={field.name} className="my-6 flex flex-col">
             <label className="py-1 text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
-              semester {field.label} <span className="text-red-600">*</span>
+              semester {field.label}{" "}
+              <span className="text-red-600">* optional</span>
             </label>
             <select
               name={field.name}
@@ -331,6 +356,9 @@ const FormBeasiswa = () => {
               onChange={handleChange}
               className="bg-red-500 text-white p-1 w-[90px] min-[360px]:w-[90px] min-[480px]:h-[30px] sm:w-[100px] sm:h-[35px] md:w-[100px] lg:w-[150px] text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             >
+              <option className="disabled" value="pilihsemester">
+                pilih semester
+              </option>
               <option value="semester4">semester 4</option>
               <option value="semester6">semester 6</option>
             </select>
@@ -340,7 +368,8 @@ const FormBeasiswa = () => {
         {[{ label: "Diploma", name: "semester_diploma" }].map((field) => (
           <div key={field.name} className="my-6 flex flex-col">
             <label className="py-1 text-xs my-1 sm:text-[16px] md:text-[16px] lg:text-[17px]">
-              semester {field.label} <span className="text-red-600">*</span>
+              semester {field.label}{" "}
+              <span className="text-red-600">* optional</span>
             </label>
             <select
               name={field.name}
@@ -348,6 +377,9 @@ const FormBeasiswa = () => {
               onChange={handleChange}
               className="bg-red-500 text-white p-1 w-[90px] min-[360px]:w-[90px] min-[480px]:h-[30px] sm:w-[100px] sm:h-[35px] md:w-[100px] lg:w-[150px] text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
             >
+              <option className="disabled" value="pilihsemester">
+                pilih semester
+              </option>
               <option value="semester6">semester 6</option>
               <option value="semester8">semester 8</option>
               <option value="semester10">semester 10</option>

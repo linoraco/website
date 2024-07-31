@@ -86,10 +86,10 @@ const TampilanProgram = () => {
       <div className="flex items-center mb-20 mx-[10%] md:mx-[15%] lg:mx-[20%] xl:mx-[20%]">
         <div className="px-4">
           <ReactWhatsapp
-            number="+62 82348135155"
-            className="bg-[#D9D9D9] text-xs sm:text-[16px] sm:p-2 min-[768px]:p-3 mt-1 p-1 rounded-xl"
+            number="+62 81143103333"
+            className="bg-[#D9D9D9] text-xs sm:text-[16px] hover:bg-green-400 hover:-translate-y-1 duration-300 sm:p-2 min-[768px]:p-3 mt-1 p-1 rounded-xl"
           >
-            Kontak Kami
+            Kontak Kabib Pemuda (Juan Rondonuwu.SH)
           </ReactWhatsapp>
         </div>
       </div>

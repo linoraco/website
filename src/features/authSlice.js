@@ -14,7 +14,7 @@ export const loginUser = createAsyncThunk(
   "user/loginUser",
   async (user, thunkAPI) => {
     try {
-      const response = await axios.post(`http://${config.ipPUBLIC}/login`, {
+      const response = await axios.post(`${config.ipPUBLIC}/login`, {
         email: user.email,
         password: user.password,
       });
@@ -31,7 +31,7 @@ export const loginUser = createAsyncThunk(
 
 export const getMe = createAsyncThunk("user/getMe", async (user, thunkAPI) => {
   try {
-    const response = await axios.get(`http://${config.ipPUBLIC}/me`, {
+    const response = await axios.get(`${config.ipPUBLIC}/me`, {
       email: user.email,
       password: user.password,
     });
@@ -45,7 +45,7 @@ export const getMe = createAsyncThunk("user/getMe", async (user, thunkAPI) => {
 });
 
 export const LogOut = createAsyncThunk("user/LogOut", async () => {
-  await axios.delete(`http://${config.ipPUBLIC}/logout`);
+  await axios.delete(`${config.ipPUBLIC}/logout`);
 });
 
 export const authSlice = createSlice({
