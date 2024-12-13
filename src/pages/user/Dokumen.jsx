@@ -3,109 +3,74 @@ import Navbar from "../../components/ComponenRespon/Navbar";
 import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import Bgdispora from "../../assets/img/bgdisporanewjpg.jpg";
-// import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
 import g from "../../assets/files/RKT DISPORA 2023.pdf";
 
 const Dokumen = () => {
-  const docs = [{ uri: g }]; // Local File
+  const links = [
+    { label: "PRODUK HUKUM", href: g },
+    { label: "RENSTRA", to: "/" },
+    { label: "RENJA", to: "/" },
+    { label: "RKT", href: "" },
+    { label: "RINGKASAN DPA", to: "/" },
+    { label: "PERJANJIAN KINERJA", to: "/" },
+    { label: "LAKIP/SAKIP", to: "/" },
+    { label: "LPPD", to: "" },
+    { label: "RENCANA AKSI", to: "/" },
+    { label: "LAPORAN KINERJA (BERKALAH)", to: "/" },
+  ];
 
   return (
-    <div className="flex-col">
-      {/* <!-- navbar --> */}
+    <div className="flex flex-col min-h-screen">
       <Navbar />
-      {/* <!-- navbar end --> */}
 
-      {/* <!-- content --> */}
-      <div
-        style={{ backgroundImage: `url(${Bgdispora})` }}
-        className="flex justify-center items-center bg-auto bg-center bg-fixed py-24 mb-3"
-      >
-        <h1 className="text-3xl max-md:text-xl text-white text-center font-bold">
-          DOKUMEN
-        </h1>
-      </div>
-
-      <hr className="mx-20" />
-
-      <br />
-      <br />
-      {/* <!-- content --> */}
-      <div className="flex">
-        <div className="flex flex-col">
-          <a
-            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            href={g}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            PRODUK HUKUM
-          </a>
-          <Link
-            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to="/"
-          >
-            RENSTRA
-          </Link>
-          <Link
-            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to="/"
-          >
-            RENJA
-          </Link>
-          <a
-            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            href=""
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            RKT
-          </a>
-          <Link
-            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to="/"
-          >
-            RINGKASAN DPA
-          </Link>
-          <Link
-            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to="/"
-          >
-            PERJANJIAN KINERJA
-          </Link>
-          <Link
-            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to="/"
-          >
-            LAKIP/SAKIP
-          </Link>
-          <Link
-            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to=""
-          >
-            LPPD
-          </Link>
-          <Link
-            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to="/"
-          >
-            RENCANA AKSI
-          </Link>
-          <Link
-            className="text-sm sm:text-lg lg:text-xl mt-1 w-auto text-justify font-semibold text-[#203dff]"
-            to="/"
-          >
-            LAPORAN KINERJA (BERKALAH)
-          </Link>
+      <div className="">
+        {" "}
+        {/* Header Section */}
+        <div
+          style={{ backgroundImage: `url(${Bgdispora})` }}
+          className="flex justify-center items-center bg-cover bg-center bg-fixed py-24 mb-6"
+        >
+          <h1 className="text-3xl md:text-4xl font-bold text-white text-center">
+            DOKUMEN
+          </h1>
         </div>
-        {/* <div className="flex-grow">
+        {/* Divider */}
+        <hr className="mx-20" />
+        {/* Content Section */}
+        <div className="flex flex-col md:flex-row gap-6 mx-6 md:mx-20 my-8">
+          {/* Links Column */}
+          <div className="flex flex-col space-y-3">
+            {links.map((link, index) =>
+              link.href ? (
+                <a
+                  key={index}
+                  className="text-sm sm:text-lg lg:text-xl font-semibold text-black  hover:underline"
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={index}
+                  className="text-sm sm:text-lg lg:text-xl font-semibold text-black  hover:underline"
+                  to={link.to || "#"}
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
+          </div>
+
+          {/* Uncomment this section when DocViewer is implemented */}
+          {/* <div className="flex-grow">
           <DocViewer documents={docs} pluginRenderers={DocViewerRenderers} />
         </div> */}
+        </div>
       </div>
-      {/* <!-- content end --> */}
 
-      {/* <!-- footer --> */}
       <Footer />
-      {/* <!-- footer end --> */}
     </div>
   );
 };

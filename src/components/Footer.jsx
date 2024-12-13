@@ -11,24 +11,26 @@ const footer = () => {
       <div className="h-[550px] p-10 sm:h-[380px] lg:h-[320px]  bg-[#D9D9D9] ">
         <div className="grid  grid-cols-1 sm:grid-cols-2  lg:grid-cols-4 items-center place-items-start ml-10 ">
           <div className="flex mt- ">
-            <img
-              className="h-[80px] ml-[-30px] sm:h-[100px] xl:h-[120px]"
-              src={Disporabgd9}
-              alt=""
-            />
+            <Link to={"/"}>
+              <img
+                className="h-[80px] ml-[-30px] sm:h-[100px] xl:h-[120px]"
+                src={Disporabgd9}
+                alt=""
+              />
+            </Link>
           </div>
           <div className="flex mt-4  lg:ml-10">
             <button className="hover:-translate-y-1 duration-200">
-              <Link to={"/"}>
+              <Link to={"/https://www.isntagram.com"}>
                 <img className="h-8  xl:h-10  px-2" src={Instagram} alt="" />
               </Link>
             </button>
             <button className="hover:-translate-y-1 duration-200">
-              <Link to={"/"}>
+              <Link to={"/https://www.facebook.com"}>
                 <img className="h-8 w-13 xl:h-10  px-2" src={Facebook} alt="" />
               </Link>
             </button>
-            <Link to={"/"}>
+            <Link to={"/https://www.whatshapp.com"}>
               <img
                 className="h-8 w-13 xl:h-10  px-2 hover:-translate-y-1 duration-200"
                 src={Whatshapp}

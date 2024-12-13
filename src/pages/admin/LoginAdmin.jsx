@@ -12,16 +12,7 @@ const LoginAdmin = () => {
 
   useEffect(() => {
     if (user || isSuccess) {
-      switch (user.role) {
-        case "1":
-          navigate("/home-admin-kadis");
-          break;
-        case "2":
-          navigate("/home-admin-kadis");
-          break;
-        default:
-          navigate("/home-admin-kadis");
-      }
+      navigate("/home-admin-kadis");
     }
     dispatch(reset());
   }, [user, isSuccess, dispatch, navigate]);
@@ -34,7 +25,7 @@ const LoginAdmin = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(http://217.15.171.240:4000/galeri/7a4aafc374cbce846c52995b6cfeac62.jpeg)`,
+        backgroundImage: `url(http://localhost:4000/galeri/7a4aafc374cbce846c52995b6cfeac62.jpeg)`,
       }}
       className="w-full h-screen font-sans bg-no-repeat"
     >

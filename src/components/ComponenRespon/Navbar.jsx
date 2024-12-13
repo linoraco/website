@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Disporabgd9 from "../../assets/img/dispora bgD9.png";
 
-import LogoPemkab from "../../assets/img/minsel_300x300.png";
-
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
@@ -113,11 +111,14 @@ const Navbar = () => {
               </ul>
             )}
           </div>
-          <img
-            className=" min-[319px]:w-[120px] sm:w-[140px] lg:w-[150px]"
-            src={Disporabgd9}
-            alt=""
-          />
+          <Link to={"/"}>
+            {" "}
+            <img
+              className=" min-[319px]:w-[120px] sm:w-[140px] lg:w-[150px]"
+              src={Disporabgd9}
+              alt=""
+            />
+          </Link>
         </div>
         <div
           tabIndex={0}

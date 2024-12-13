@@ -100,6 +100,10 @@ const FormBeasiswa = () => {
       "jurusan",
       "wisuda",
       "yudisium",
+      "semester_s1",
+      "semester_s2",
+      "semester_s3",
+      "semester_diploma",
     ];
 
     const requiredFiles = [
@@ -114,13 +118,6 @@ const FormBeasiswa = () => {
       "gambar_kartumahasiswa",
       "gambar_kk",
       "gambar_proposalakhir",
-    ];
-
-    const semesterFields = [
-      "semester_s1",
-      "semester_s2",
-      "semester_s3",
-      "semester_diploma",
     ];
 
     const emptyFields = requiredFields.filter((field) => !formData[field]);
@@ -219,8 +216,8 @@ const FormBeasiswa = () => {
             type: "text",
           },
           { label: "No Telepon", name: "no_telepon", type: "text" },
-          { label: "NIM", name: "nim", type: "text" },
-          { label: "IPK", name: "IPK", type: "text" },
+          { label: "NIM", name: "nim", type: "text", placeholder: "21013047" }, // Placeholder untuk NIM
+          { label: "IPK", name: "IPK", type: "text", placeholder: "3.80" }, // Placeholder untuk IPK
           { label: "NIK", name: "nik", type: "text" },
           { label: "Alamat Lengkap", name: "alamat", type: "textarea" },
           { label: "Desa", name: "desa", type: "text" },
@@ -244,6 +241,7 @@ const FormBeasiswa = () => {
                 name={field.name}
                 value={formData[field.name]}
                 onChange={handleChange}
+                placeholder={field.placeholder || ""}
                 className="w-[250px] min-[360px]:w-[300px] min-[480px]:h-[30px] sm:w-[350px] sm:h-[35px] md:w-[300px] lg:w-[350px] p-1 text-xs sm:text-[15px] md:text-[15px] lg:text-[16px] border-red-800 border-2 rounded-lg"
                 type={field.type}
               />

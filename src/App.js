@@ -785,7 +785,7 @@ function App() {
             </Suspense>
           }
         />
-
+        {/* 
         <Route
           path="/surat-kerja-kadis"
           element={
@@ -919,7 +919,7 @@ function App() {
               <LazyFormAddSuratPemuda />
             </Suspense>
           }
-        />
+        /> */}
 
         <Route
           path="/tampilan-berita-kadis/:id"

@@ -39,7 +39,6 @@ const DataPendaftar = () => {
         `${config.ipPUBLIC}/regprogram/${id}`
       );
       getPendaftar();
-      window.location.reload();
     } catch (error) {
       console.log(error);
     }

@@ -76,7 +76,7 @@ const DashboardKadis = () => {
           </Link>
         </button>
 
-        <button className="px-20 py-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
+        {/* <button className="px-20 py-10 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300">
           <Link to={"/surat-kerja-kadis"}>
             <img src={SuratLogo} alt="" />{" "}
             <p className="text-sm min-[319px]:text-xs sm:text-lg  lg:text-xl text-center mt-1 w-auto  font-semibold">
@@ -107,7 +107,7 @@ const DashboardKadis = () => {
               Surat Bidang Kerja Pemuda{" "}
             </p>
           </Link>
-        </button>
+        </button> */}
       </div>
 
       {/* content end */}
