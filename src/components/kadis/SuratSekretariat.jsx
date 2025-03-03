@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Dispora1 from "../../assets/img/Dispora 1.png";
-import Grup2 from "../../assets/img/Group 2.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ReactPaginate from "react-paginate";
@@ -28,7 +26,9 @@ const SuratSekretariat = () => {
 
   const fetchDetailPendaftar = async () => {
     try {
-      const response = await axios.get(`${config.ipPUBLIC}suratkadis/${id}`);
+      const response = await axios.get(
+        `${config.ipPUBLIC}suratsekretariat/${id}`
+      );
       setPendaftar(response.data);
     } catch (error) {
       console.log(error);
@@ -37,8 +37,9 @@ const SuratSekretariat = () => {
 
   const getSuratSekretariat = async () => {
     const response = await axios.get(
-      `${config.ipPUBLIC}suratsekretariat?search_query=${keyword}&page=${page}&limit=${limit}`
+      `http://localhost:4000/suratsekretariat?search_query=${keyword}&page=${page}&limit=${limit}`
     );
+
     setPage(response.data.page);
     setPages(response.data.totalPage);
     setRows(response.data.totalRows);
@@ -52,7 +53,7 @@ const SuratSekretariat = () => {
   const deleteSuratSekretariat = async (id) => {
     try {
       const response = await axios.delete(
-        `${config.ipPUBLIC}suratsekretariat/${id}`
+        `http://localhost:4000/suratsekretariat/${id}`
       );
       if (response.status === 200) {
         getSuratSekretariat();
@@ -91,6 +92,10 @@ const SuratSekretariat = () => {
     content: () => ComponentPDF.current,
     documentTitle: "Userdata",
   });
+
+  useEffect(() => {
+    fetchDetailPendaftar();
+  }, [id]);
 
   return (
     <div className="flex-col ">

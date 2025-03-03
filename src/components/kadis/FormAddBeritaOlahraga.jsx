@@ -116,7 +116,7 @@ const FormAddBeritaOlahraga = () => {
           value={tanggal_berita_olahraga}
           onChange={(e) => setTanggalBerita(e.target.value)}
           className="border-2 p-1 border-black  rounded-xl my-4 text-xs sm:text-sm md:text-md lg:text-lg"
-          type="text"
+          type="date"
           name=""
           id=""
         />

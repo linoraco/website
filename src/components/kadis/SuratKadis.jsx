@@ -1,6 +1,4 @@
 import React, { useState, useEffect, useRef } from "react";
-import Dispora1 from "../../assets/img/Dispora 1.png";
-import Grup2 from "../../assets/img/Group 2.png";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ReactPaginate from "react-paginate";

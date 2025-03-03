@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Dispora1 from "../../assets/img/Dispora 1.png";
-import Grup2 from "../../assets/img/Group 2.png";
+
 import Header from "../Header";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -120,7 +119,7 @@ const FormAddSuratSekretariat = () => {
           value={tanggal}
           onChange={(e) => setTanggal(e.target.value)}
           className="border-2 p-1 border-black  rounded-xl my-4 text-xs sm:text-sm md:text-md lg:text-lg"
-          type="text"
+          type="date"
           name=""
           id=""
         />

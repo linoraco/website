@@ -18,6 +18,8 @@ const DataPendaftar = () => {
   const [query, setQuery] = useState("");
   const [message, setMessage] = useState("");
   const ComponentPDF = useRef();
+  const [showModal, setShowModal] = useState(false);
+  const [selectedId, setSelectedId] = useState(null);
 
   const getPendaftar = async () => {
     const response = await axios.get(
@@ -33,15 +35,37 @@ const DataPendaftar = () => {
     getPendaftar();
   }, [page, keyword]);
 
-  const deletePendaftar = async (id) => {
+  const updateKeterangan = async (uuid, keterangan) => {
     try {
-      const response = await axios.delete(
-        `${config.ipPUBLIC}/regprogram/${id}`
+      await axios.patch(`${config.ipPUBLIC}/regprogram/${uuid}`, {
+        keterangan: keterangan,
+      });
+      setPendaftar((prev) =>
+        prev.map((item) =>
+          item.uuid === uuid ? { ...item, keterangan } : item
+        )
       );
+    } catch (error) {
+      console.error(
+        "Error updating keterangan:",
+        error.response?.data || error.message
+      );
+    }
+  };
+
+  const deletePendaftar = async () => {
+    try {
+      await axios.delete(`${config.ipPUBLIC}/regprogram/${selectedId}`);
       getPendaftar();
+      setShowModal(false);
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const confirmDelete = (id) => {
+    setSelectedId(id);
+    setShowModal(true);
   };
 
   const changePage = ({ selected }) => {
@@ -145,7 +169,7 @@ const DataPendaftar = () => {
                 </div>
                 <div className="flex justify-center mt-5 mb-10">
                   <h1 className="font-bold text-xl">
-                    HASIL SELEKSI PROGRAM BEASISWA 2023
+                    HASIL SELEKSI PROGRAM BEASISWA 2024
                   </h1>
                 </div>
               </div>
@@ -163,6 +187,7 @@ const DataPendaftar = () => {
                       <th>IPK</th>
                       <th>alamat</th>
                       <th>No.HP</th>
+                      <th>Keterangan</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -182,7 +207,7 @@ const DataPendaftar = () => {
                         <td className="p-2 lg:p-3 ">{item.IPK}</td>
                         <td className="p-2 lg:p-3 ">{item.alamat}</td>
                         <td className="p-2 lg:p-3 ">{item.no_telepon}</td>
-                        <td className="p-2 lg:p-3 "></td>
+                        <td className="p-2 lg:p-3 ">{item.keterangan}</td>
                         <td className="p-2 lg:p-3 ">
                           <button className="aksi px-2 bg-slate-500 rounded-xl">
                             <Link to={`/detail-pendaftar-kadis/${item.uuid}`}>
@@ -192,10 +217,30 @@ const DataPendaftar = () => {
                         </td>
                         <td className="p-2 lg:p-3 ">
                           <button
-                            onClick={(e) => deletePendaftar(item.id)}
+                            onClick={(e) => confirmDelete(item.id)}
                             className="aksi px-2 bg-red-500 rounded-xl"
                           >
                             Hapus
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            onClick={() =>
+                              updateKeterangan(item.uuid, "Diterima")
+                            }
+                            className="bg-green-500 px-2 rounded-xl aksi"
+                          >
+                            Terima
+                          </button>
+                        </td>
+                        <td>
+                          <button
+                            onClick={() =>
+                              updateKeterangan(item.uuid, "Ditolak")
+                            }
+                            className="bg-red-500 px-2 rounded-xl aksi"
+                          >
+                            Tolak
                           </button>
                         </td>
                       </tr>
@@ -245,6 +290,27 @@ const DataPendaftar = () => {
           </div>
         </div>
       </div>
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+          <div className="bg-white p-5 rounded-lg shadow-lg">
+            <p>Apakah Anda yakin ingin menghapus data ini?</p>
+            <div className="flex justify-end mt-4">
+              <button
+                onClick={() => setShowModal(false)}
+                className="mr-2 px-4 py-2 bg-gray-500 text-white rounded"
+              >
+                Batal
+              </button>
+              <button
+                onClick={deletePendaftar}
+                className="px-4 py-2 bg-red-500 text-white rounded"
+              >
+                Hapus
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

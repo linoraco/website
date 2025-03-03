@@ -199,7 +199,7 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="bg-red-600/50 lg:mx-10 2xl:mx-[10%] animate-fadeIn duration-500 rounded-xl my-20">
+        <div className="bg-black/50 lg:mx-10 2xl:mx-[10%] animate-fadeIn duration-500 rounded-xl my-20">
           <div className="grid grid-flow-col gap-1 text-center auto-cols-max justify-end mr-5 mt-5">
             <div className="flex flex-col text-lg font-mono font-semibold mb-10 rounded-xl py-10 px-4 text-white max-md:textarea-md">
               {currentTime}
@@ -266,9 +266,9 @@ const HomePage = () => {
         {/* <!-- Berita & Pengumuman  --> */}
         <div
           style={{ backgroundImage: `url(${BgAdmin})` }}
-          className=" bg-white bg-bottom  bg-auto bg-fixed lg:px-10 2xl:px-[10%] "
+          className=" bg-white bg-bottom  bg-auto bg-fixed lg:px-10 2xl:px-[10%]"
         >
-          <div className=" pt-7">
+          <div className="pt-7">
             <p className="font-semibold text-center text-sm min-[450px]:text-[15px] sm:text-lg md:text-xl lg:text-2xl  text-black mt-11">
               Berita & Pengumuman Bidang Kepemudaan
             </p>
@@ -363,7 +363,7 @@ const HomePage = () => {
         </div>
         <div className="flex-col mt-20  lg:mx-10 2xl:mx-[10%]">
           {/* Program Pemuda */}
-          <div className="flex-col items-start bg-red-600/50 py-10 rounded-xl ">
+          <div className="flex-col items-start bg-black/50 py-10 rounded-xl ">
             <div>
               <h1 className="flex mx-28 text-center text-sm min-[450px]:text-[15px] sm:text-lg md:text-xl lg:text-2xl font-semibold text-white">
                 Program Kepemudaan
@@ -402,7 +402,7 @@ const HomePage = () => {
           </div>
           {/* Program Pemuda END */}
           {/* Program Olahraga */}
-          <div className="mt-8 bg-red-600/50 py-10 rounded-xl">
+          <div className="mt-8 bg-black/50  py-10 rounded-xl">
             <div>
               <h1 className="text-2xl max-md:text-xl ml-28 text-white font-semibold">
                 Program Olahraga
@@ -445,7 +445,7 @@ const HomePage = () => {
         {/* <!-- Program end --> */}
 
         {/* <!-- Galeri start --> */}
-        <div className="bg-red-600/50 lg:mx-10 2xl:mx-[10%] animate-fadeIn duration-500 rounded-xl my-20">
+        <div className="bg-black/50 lg:mx-10 2xl:mx-[10%] animate-fadeIn duration-500 rounded-xl my-20">
           <div className="py-10 ">
             <div className="flex justify-start">
               <h1 className="text-2xl max-md:text-xl ml-28 text-white font-semibold">

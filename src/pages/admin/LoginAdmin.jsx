@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { loginUser, reset } from "../../features/authSlice";
+import BgLogin from "../../assets/img/bglogin.png";
+import LogoDispora from "../../assets/logo/logo-dispora.png";
 
 const LoginAdmin = () => {
   const [email, setEmail] = useState("");
@@ -25,11 +27,20 @@ const LoginAdmin = () => {
   return (
     <div
       style={{
-        backgroundImage: `url(http://localhost:4000/galeri/7a4aafc374cbce846c52995b6cfeac62.jpeg)`,
+        backgroundImage: `url(${BgLogin})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
       className="w-full h-screen font-sans bg-no-repeat"
     >
       <div className="container flex flex-col items-center justify-center flex-1 h-full mx-auto">
+        <div className="flex justify-center items-center ">
+          <img
+            className="w-[300px] h-[150px] mb-10"
+            src={LogoDispora}
+            alt="Logo Dispora"
+          />
+        </div>
         {message && (
           <p className="bg-red-500 py-4 px-8 rounded-3xl mb-4">!!!{message}</p>
         )}
@@ -73,12 +84,6 @@ const LoginAdmin = () => {
                 >
                   Login
                 </button>
-                <Link
-                  to="/"
-                  className="py-2 px-4 bg-red-600 hover:bg-red-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
-                >
-                  Beranda
-                </Link>
               </div>
             </form>
           </div>

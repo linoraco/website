@@ -12,10 +12,8 @@ const EditBerita = () => {
   const [isi_berita, setIsiBerita] = useState([]);
   const [tanggal_berita, setTanggalBerita] = useState([]);
   const [file, setFile] = useState([]);
-  const [gambar_berita, setGambarberita] = useState([]);
   const [msg, setMsg] = useState("");
   const [preview, setPreview] = useState("");
-
   const [openModal, setOpenModal] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();

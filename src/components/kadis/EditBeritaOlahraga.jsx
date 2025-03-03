@@ -15,7 +15,6 @@ const EditBeritaOlahraga = () => {
   const [msg, setMsg] = useState("");
   const [preview, setPreview] = useState("");
   const { id } = useParams();
-  const [beritas, setBerita] = useState([]);
 
   useEffect(() => {
     getBeritaOlahragaById(id);

@@ -1,92 +1,8 @@
 import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 import LoginAdmin from "./pages/admin/LoginAdmin";
-import HomePage from "./pages/user/HomePage";
 
-// import Renstra from "./pages/user/Renstra";
-// import SejarahDinas from "./pages/user/SejarahDinas";
-// import StrukturDinas from "./pages/user/StrukturDinas";
-// import Tupoksi from "./pages/user/Tupoksi";
-// import VisiMisi from "./pages/user/VisiMisi";
-
-// import TampilanBerita from "./pages/user/TampilanBerita";
-// import FormBeasiswa from "./pages/user/FormBeasiswa";
-
-// import AllBerita from "./pages/user/AllBerita";
-// import AllGaleri from "./pages/user/AllGaleri";
-// import AllProgram from "./pages/user/AllProgram";
-// import { Pagination } from "swiper/modules";
-
-// import AllBeritaOlahraga from "./pages/user/AllBeritaOlahraga";
-
-// import TampilanBeritaOlahraga from "./pages/user/TampilanBeritaOlahraga";
-// import AllProgramOlahraga from "./pages/user/AllProgramOlahraga";
-// import TampilanProgram from "./pages/user/TampilanProgram";
-// import TampilanProgramOlahraga from "./pages/user/TampilanProgramOlahraga";
 import DashboardKadis from "./components/kadis/DashboardKadis";
-// import AddBeritaKadis from "./components/kadis/AddBerita";
-// import AddBeritaOlahragaKadis from "./components/kadis/AddBeritaOlahraga";
-// import AddProgramKadis from "./components/kadis/AddProgram";
-// import AddProgramOlahragaKadis from "./components/kadis/AddProgramOlahraga";
-// import FormAddBeritaKadis from "./components/kadis/FormAddBerita";
-// import FormAddBeritaOlahragaKadis from "./components/kadis/FormAddBeritaOlahraga";
-// import FormAddProgramKadis from "./components/kadis/FormAddProgram";
-// import FormAddProgramOlahragaKadis from "./components/kadis/FormAddProgramOlahraga";
-// import EditProgramKadis from "./components/kadis/EditProgram";
-// import EditProgramOlahragaKadis from "./components/kadis/EditProgramOlahraga";
-// import EditBeritaKadis from "./components/kadis/EditBerita";
-// import EditBeritaOlahragaKadis from "./components/kadis/EditBeritaOlahraga";
-// import DataPendaftarKadis from "./components/kadis/DataPendaftar";
-// import DetailPendaftarKadis from "./components/kadis/DetailPendaftar";
-// import AddGaleriKadis from "./components/kadis/AddGaleri";
-// import FormAddGaleriKadis from "./components/kadis/FormAddGaleri";
-// import TampilanBeritaKadis from "./components/kadis/TampilanBeritaKadis";
-// import TampilanBeritaOlahragaKadis from "./components/kadis/TampilanBeritaOlahragaKadis";
-
-// import DashboardPemuda from "./components/pemuda/DashboardPemuda";
-// import AddBeritapemuda from "./components/pemuda/AddBerita";
-// import AddProgrampemuda from "./components/pemuda/AddProgram";
-// import FormAddBeritapemuda from "./components/pemuda/FormAddBerita";
-// import FormAddProgrampemuda from "./components/pemuda/FormAddProgram";
-// import EditProgrampemuda from "./components/pemuda/EditProgram";
-// import EditBeritapemuda from "./components/pemuda/EditBerita";
-// import DataPendaftarpemuda from "./components/pemuda/DataPendaftar";
-// import DetailPendaftarpemuda from "./components/pemuda/DetailPendaftar";
-// import TampilanBeritaPemuda from "./components/pemuda/TampilanBeritaPemuda";
-
-// import DashboardOlahraga from "./components/olahraga/DashboardOlahraga";
-// import AddBeritaOlahraga from "./components/olahraga/AddBeritaOlahraga";
-// import AddProgramOlahraga from "./components/olahraga/AddProgramOlahraga";
-// import FormAddBeritaOlahraga from "./components/olahraga/FormAddBeritaOlahraga";
-// import FormAddProgramOlahraga from "./components/olahraga/FormAddProgramOlahraga";
-// import EditProgramOlahraga from "./components/olahraga/EditProgramOlahraga";
-// import EditBeritaOlahraga from "./components/olahraga/EditBeritaOlahraga";
-// import TampilanBeritaOlahragaOlahraga from "./components/olahraga/TampilanBeritaOlahraga";
-
-// import AddForumOlahraga from "./components/kadis/AddForum";
-
-// import HakAksesAdmin from "./components/HakAksesAdmin";
-
-// import FormAddForum from "./components/kadis/FormAddForum";
-
-// import SuratKadis from "./components/kadis/SuratKadis";
-// import FormAddSuratKadis from "./components/kadis/FormAddSuratKadis";
-// import SuratSekretariat from "./components/kadis/SuratSekretariat";
-// import FormAddSuratSekretariat from "./components/kadis/FormAddSuratSekretariat";
-// import SuratOlahragaKadis from "./components/kadis/SuratOlahraga";
-// import FormAddSuratOlahragaKadis from "./components/kadis/FormAddSuratOlahraga";
-// import SuratPemudaKadis from "./components/kadis/SuratPemuda";
-// import FormAddSuratPemudaKadis from "./components/kadis/FormAddSuratPemuda";
-
-// import SuratOlahraga from "./components/olahraga/SuratOlahraga";
-// import FormAddSuratOlahraga from "./components/olahraga/FormAddSuratOlahraga";
-
-// import SuratPemuda from "./components/pemuda/SuratPemuda";
-// import FormAddSuratPemuda from "./components/pemuda/FormAddSuratPemuda";
-
-// import TampilanProgramBeasiswa from "./pages/user/TampilanProgramBeasiswa";
-// import Lakip from "./pages/user/Lakip";
-// import Dokumen from "./pages/user/Dokumen";
 
 const LazyAllBerita = React.lazy(() => import("./pages/user/AllBerita"));
 const LazyAllGaleri = React.lazy(() => import("./pages/user/AllGaleri"));
@@ -120,10 +36,6 @@ const LazyVisiMisi = React.lazy(() => import("./pages/user/VisiMisi"));
 const LazyTampilanBerita = React.lazy(() =>
   import("./pages/user/TampilanBerita")
 );
-
-// const LazyDashboardKadis = React.lazy(() =>
-//   import("./components/kadis/DashboardKadis")
-// );
 
 const LazyFormBeasiswa = React.lazy(() => import("./pages/user/FormBeasiswa"));
 
@@ -216,7 +128,7 @@ function App() {
     <div className="">
       <Routes>
         {/* USER */}
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<LoginAdmin />} />
         <Route
           path="/produk-hukum"
           element={
@@ -785,7 +697,7 @@ function App() {
             </Suspense>
           }
         />
-        {/* 
+
         <Route
           path="/surat-kerja-kadis"
           element={
@@ -836,6 +748,7 @@ function App() {
             </Suspense>
           }
         />
+
         <Route
           path="/form-surat-kerja-sekretariat"
           element={
@@ -919,7 +832,7 @@ function App() {
               <LazyFormAddSuratPemuda />
             </Suspense>
           }
-        /> */}
+        />
 
         <Route
           path="/tampilan-berita-kadis/:id"

@@ -98,7 +98,7 @@ const AddProgram = () => {
                   />
                 </Link>
                 <button
-                  onClick={(e) => deleteProgram(item.uuid)}
+                  onClick={(e) => deleteProgram(item.id)}
                   className="
                     bg-red-600 rounded-xl font-bold"
                 >

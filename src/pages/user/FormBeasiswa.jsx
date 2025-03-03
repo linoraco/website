@@ -21,6 +21,7 @@ const FormBeasiswa = () => {
     jurusan: "",
     wisuda: "",
     yudisium: "",
+    keterangan: "diproses",
     semester_s1: "",
     semester_s2: "",
     semester_s3: "",
@@ -100,10 +101,6 @@ const FormBeasiswa = () => {
       "jurusan",
       "wisuda",
       "yudisium",
-      "semester_s1",
-      "semester_s2",
-      "semester_s3",
-      "semester_diploma",
     ];
 
     const requiredFiles = [

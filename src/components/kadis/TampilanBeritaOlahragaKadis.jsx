@@ -97,10 +97,17 @@ const TampilanBeritaOlahragaKadis = () => {
           }`}
           alt=""
         />
-        <p className="min-[320px]:text-[10px] mx-auto leading-normal  sm:text-sm  md:text-lg   mt-1 text-justify">
+        <p className="min-[320px]:text-[10px] mx-auto leading-normal  sm:text-sm  md:text-lg mb-14 mt-1 text-justify">
           {" "}
           {beritas && beritas.isi_berita_olahraga}
         </p>
+
+        <button
+          onClick={() => setOpenModal(true)}
+          className="flex w-[50%] mx-auto text-white hover:bg-red-800 justify-center  bg-red-500 p-3  rounded-xl    mb-20 mt-10 "
+        >
+          hapus
+        </button>
       </div>
 
       {/* <!-- content end --> */}

@@ -10,6 +10,7 @@ import config from "../../config/config.js";
 
 const FormAddGaleri = () => {
   const [file, setFile] = useState("");
+  const [nama, setNama] = useState("");
   const [preview, setPreview] = useState("");
 
   const [openModal, setOpenModal] = useState(false);
@@ -25,6 +26,7 @@ const FormAddGaleri = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", file);
+    formData.append("nama_gambar", nama);
 
     try {
       await axios.post(`${config.ipPUBLIC}/galeri`, formData, {
@@ -71,9 +73,16 @@ const FormAddGaleri = () => {
         onSubmit={sendData}
         className="flex flex-col mx-[5%] sm:mx-[10%] md:mx-[15%]  lg:mx-[20%] mt-10 "
       >
-        <label className="p-2  text-md sm:text-md md:text-lg lg:text-xl" for="">
-          Gambar Galeri Dinas
-        </label>
+        <input
+          value={nama}
+          onChange={(e) => setNama(e.target.value)}
+          className="mb-4 border border-black rounded-md py-2 px-4"
+          type="text"
+          name=""
+          id=""
+          placeholder="Nama Gambar"
+        />
+
         <input
           onChange={loadImage}
           className="mt-4"

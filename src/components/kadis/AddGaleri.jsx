@@ -68,16 +68,19 @@ const AddGaleri = () => {
         </div>
 
         {/* tampilan admin galeri */}
-        <div className="container grid lg:mt-28 mx-auto  grid-cols-1 min-[570px]:grid-cols-2  md:grid-cols-2  sm:grid-cols-2  lg:grid-cols-3 xl:grid-cols-4 place-items-center my-10">
+        <div className="container grid lg:mt-28 mx-auto  grid-cols-1 min-[570px]:grid-cols-2  md:grid-cols-2  sm:grid-cols-2 space-x-5 lg:grid-cols-3 xl:grid-cols-4 place-items-center my-10">
           {data.map((item) => (
-            <div className="avatar my-4 flex-col">
-              <div className="w-[200px]  min-[360px]:w-[250px]    lg:w-[300px]  md:w-72  sm:w-64 shadow-lg rounded-xl">
+            <div className=" my-4 flex-col flex justify-center items-center rounded-md shadow-md pb-4">
+              <div className=" shadow-lg rounded-xl">
                 <img src={`${config.ipPUBLIC}/galeri/${item.gambar}`} />
               </div>
+
+              <h1 className="text-lg">{`${item.nama_gambar}`}</h1>
+
               <button
                 onClick={() => deleteGaleri(item && item.id)}
                 className="py-1 px-6 mx-auto
-                    bg-red-600 rounded-xl font-bold"
+                    bg-red-600 rounded-xl text-white font-bold"
               >
                 Hapus
               </button>

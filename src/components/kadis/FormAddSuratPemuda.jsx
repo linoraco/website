@@ -31,11 +31,11 @@ const FormAddSuratPemuda = () => {
     }
     const formData = new FormData();
     formData.append("file", file);
-    formData.append("nama_surat_kadis", title);
-    formData.append("tanggal_surat_kadis", tanggal);
+    formData.append("nama_surat_pemuda", title);
+    formData.append("tanggal_surat_pemuda", tanggal);
 
     try {
-      await axios.post(`${config.ipPUBLIC}/suratkadis`, formData, {
+      await axios.post(`${config.ipPUBLIC}/suratpemuda`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -118,7 +118,7 @@ const FormAddSuratPemuda = () => {
           value={tanggal}
           onChange={(e) => setTanggal(e.target.value)}
           className="border-2 p-1 border-black  rounded-xl my-4 text-xs sm:text-sm md:text-md lg:text-lg"
-          type="text"
+          type="date"
           name=""
           id=""
         />
